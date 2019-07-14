@@ -13,7 +13,18 @@ module.exports = {
       }]
   },
   plugins: [
-    '@vuepress/pwa',
+    ['@vuepress/pwa',
+      {
+        serviceWorker: true,
+        updatePopup: true
+      }
+    ],
+    [
+      'sitemap',
+      {
+        hostname: 'https://kevcodez.de'
+      }
+    ],
     [
       '@vuepress/google-analytics',
       {
