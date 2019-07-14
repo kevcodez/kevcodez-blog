@@ -51,7 +51,7 @@ export default {
     font-weight: 500;
     border-bottom: none;
     padding-bottom: 0;
-    color: #3eaf7c;
+    color: #5a67d8;
   }
 
   p {
