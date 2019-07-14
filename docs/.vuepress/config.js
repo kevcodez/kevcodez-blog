@@ -13,6 +13,7 @@ module.exports = {
       }]
   },
   plugins: [
+    '@vuepress/pwa',
     [
       '@vuepress/google-analytics',
       {
