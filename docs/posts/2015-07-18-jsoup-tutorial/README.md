@@ -26,7 +26,7 @@ First off, you need to include the jsoup dependency. For news, changelog and bug
 
 Start by parsing HTML into a **Document**. Henceforth, we are working with that **Document**. Jsoup is called statically. Jsoup offers the following variants of parsing HTML.
 
-[![Jsoup - Methoden zum Parsen eines Dokumentes](https://kevcodez.de/wp-content/uploads/2015/07/jsoup-static-factory-methods.png)](https://kevcodez.de/wp-content/uploads/2015/07/jsoup-static-factory-methods.png)
+[Jsoup - Methoden zum Parsen eines Dokumentes](./jsoup-static-factory-methods.png)
 
 To parse a website to a document, you can simply call the following method
 

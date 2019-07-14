@@ -226,4 +226,4 @@ persons.sort((p1, p2) -> p1.getBrithdate().compareTo(p2.getBrithdate()));
 
 If Eclipse fails to compile your lambda expressions, you probably have not yet set your Compilers compliance level to >= 1.8. Go to _Window -> Preferences_ and set **Compiler compliance level** **to at least 1.8.**
 
-[![Eclipse Compiler auswählen](https://kevcodez.de/wp-content/uploads/2015/07/eclipse-compiler-settings.png)](https://kevcodez.de/wp-content/uploads/2015/07/eclipse-compiler-settings.png)
+[Eclipse Compiler auswählen](./eclipse-compiler-settings.png)

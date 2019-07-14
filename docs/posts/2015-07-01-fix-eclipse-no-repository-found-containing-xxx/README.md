@@ -20,6 +20,6 @@ Wer öfters mal Plugins installiert oder aktualisiert in Eclipse oder in einer S
 
 Der Fehler lässt sich jedoch relativ einfach beheben! Geht zunächst in die Eclipse Einstellungen unter **Window** > **Preferences** und sucht nach **software**. Dort sollten ihr den Punkt **Available Software Sites** finden. Klickt euch nun einfach durch die Seiten, die _Enabled_ sind und drückt jeweils auf die Schaltfläche **Reload**. Dadurch werden die Update-Repositories aktualisiert und es sollte wieder ohne Probleme funktionieren. ;)
 
-[![Eclipse - No repository found - Fix](http://kevcodez.de/wp-content/uploads/2015/07/eclipse_no_repository_found.png)](http://kevcodez.de/wp-content/uploads/2015/07/eclipse_no_repository_found.png)
+[Eclipse - No repository found - Fix](./eclipse_no_repository_found.png)
 
 Einfach mit der Schaltfläche **OK** bestätigen und nochmal versuchen.

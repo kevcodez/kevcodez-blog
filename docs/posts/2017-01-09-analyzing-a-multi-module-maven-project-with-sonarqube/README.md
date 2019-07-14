@@ -121,7 +121,7 @@ By the way, you can also pass the parameter for **sonar.host.url** in here, if y
 
 When navigating the [Projects Administration Page (Adminstration > Projects > Management)](http://localhost:9000/projects_admin) you should be able to see your Projects. Click on the project and you should see the results from the analysis.
 
-[![Undertow, analyzed with SonarQube, Project overview](https://kevcodez.de/wp-content/uploads/2017/01/sonar_analysis.png)](https://kevcodez.de/index.php/2017/01/analyzing-a-multi-module-maven-project-with-sonarqube/sonar_analysis/)
+[Undertow, analyzed with SonarQube, Project overview](./sonar_analysis.png)
 
 Go to Issues to see the issues that were analyzed. You can also disable rules under Quality Profiles, if you find rules that do not apply to your project or you do not want to see.
 

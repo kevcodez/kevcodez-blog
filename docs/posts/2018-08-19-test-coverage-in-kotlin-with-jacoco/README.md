@@ -158,7 +158,7 @@ jacocoTestReport {
 
 There are more options for configuring the coverage report. Take a look at the [official plugin page](https://docs.gradle.org/current/userguide/jacoco_plugin.html). After executing the **test** task (also included during _build_ task, by default), execute the **jacocoTestReport** task. If it succeeds, reports are available under _build/reports/jacoco/test_. Our configuration generates a HTML report and a XML report.
 
-![Code Coverage with Jacoco](https://kevcodez.de/wp-content/uploads/2018/08/Bildschirmfoto-2018-08-19-um-22.18.01.png)
+![Code Coverage with Jacoco](./jacoco-report.png)
 
 We're done. If you want to generate the report automatically, when executing the test task, you can add the following snippet to your build script:
 

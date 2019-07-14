@@ -23,7 +23,7 @@ First, you have to register for [Amazon Web Services - AWS](https://aws.amazon.
 
 You may now create buckets in the S3 management console. A bucket is a container für any objects, that you want to store in S3. Multiple buckets for multiple projects can be created. If you want to upload or delete files, you always specify a bucket. Let's start by creating a new bucket:
 
-[![Amazon S3 - Bucket erstellen](https://kevcodez.de/wp-content/uploads/2015/07/s3_create_bucket.png)](https://kevcodez.de/wp-content/uploads/2015/07/s3_create_bucket.png)
+[Amazon S3 - Bucket erstellen](./s3_create_bucket.png)
 
 The S3 management console can be used to upload files, however, we want to do it via Code ;)
 
@@ -31,7 +31,7 @@ The S3 management console can be used to upload files, however, we want to do it
 
 To publicly access the bucket (via Code), we need to generate a private and public key. Click on your account name -> _Security Credentials -> _Tab _Access Keys (Access Key ID and Secret Access Key)_. Simply hit _Create New Access Key_. **Important:** Write down your private key - you cannt view it again. If you loose your private key, you have to generate a new key pair and delete the old one.
 
-[![Amazon S3 - Keys erstellen](https://kevcodez.de/wp-content/uploads/2015/07/s3_create_access_key.png)](https://kevcodez.de/wp-content/uploads/2015/07/s3_create_access_key.png)
+[Amazon S3 - Keys erstellen](./s3_create_access_key.png)
 
 ## Upload, retreive and delete and S3 Dateien hochladen, löschen und abfragen mit Java
 
@@ -45,7 +45,7 @@ AWS offers a Java SDK at the following GAV-Coodinates:
 </dependency>
 ```
 
-I wrote a small client that lets you upload, retreive and delete files. The AmazonClient is an Enum with a single type (see [Java Singleton Pattern - Enum](https://kevcodez.de/index.php/2015/06/java-singleton-pattern/)) - ensuring that there is only a single instance. The com.amazonaws.services.s3.AmazonS3Client is initiated once (statically) with your private and public access key. We also set the region we're in- in this case Frankfurt (EU\_CENTRAL\_1). You have to adjust the keys.
+I wrote a small client that lets you upload, retreive and delete files. The AmazonClient is an Enum with a single type (see [Java Singleton Pattern - Enum](/posts/2015-06-29-java-singleton-pattern/)) - ensuring that there is only a single instance. The com.amazonaws.services.s3.AmazonS3Client is initiated once (statically) with your private and public access key. We also set the region we're in- in this case Frankfurt (EU\_CENTRAL\_1). You have to adjust the keys.
 
 ```java
 import java.io.File;
@@ -163,7 +163,7 @@ By default, when uploading a file to your bucket, it is not publicly accessible.
 
 Go to **S3 Management Console** and _Rightclick your bucket_\-> **Properties**. Under **Permissions** click **Add bucket policy**.
 
-[![Amazon S3 - Bucket Permissions](https://kevcodez.de/wp-content/uploads/2015/07/s3_add_bucket_policy.png)](https://kevcodez.de/wp-content/uploads/2015/07/s3_add_bucket_policy.png)
+[Amazon S3 - Bucket Permissions](./s3_add_bucket_policy.png)
 
 Enter the following policy:
 
@@ -182,4 +182,4 @@ Enter the following policy:
 
 **Important:** Under Resource, you have to enter the name of your bucket.
 
-[![Amazon S3 - Bucket Policy Editor](https://kevcodez.de/wp-content/uploads/2015/07/s3_bucket_policy_editor.png)](https://kevcodez.de/wp-content/uploads/2015/07/s3_bucket_policy_editor.png)
+[Amazon S3 - Bucket Policy Editor](./s3_bucket_policy_editor.png)

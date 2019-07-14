@@ -7,7 +7,7 @@ Java 8 contains a brand new Joda-time inspired Date Time API within the **java.t
 
 The following image offers an overview of the API's structure.
 
-\[caption id="attachment\_330" align="aligncenter" width="862"\][![UML Modell - Source: heise.de](https://kevcodez.de/wp-content/uploads/2015/07/Abbildung-UMLModell-Class-java-time-Kernklassen-3f94267461887b37.png)](https://kevcodez.de/wp-content/uploads/2015/07/Abbildung-UMLModell-Class-java-time-Kernklassen-3f94267461887b37.png) UML Modell - Source: heise.de\[/caption\]
+[UML Modell - Source: heise.de](./UML.png)
 
 ## LocalDate
 

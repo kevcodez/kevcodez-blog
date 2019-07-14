@@ -55,7 +55,7 @@ export default {
   }
 
   p {
-    color: lighten(#2c3e50, 25%);
+    color: #2c3e50;
   }
 }
 

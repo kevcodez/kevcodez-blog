@@ -3,7 +3,7 @@ title: "Book: Clean Architecture"
 date: "2018-08-18"
 ---
 
-Uncle Bob, who is widely known in the development scene, published his new book in late 2017. You may read [Clean Code](https://kevcodez.de/index.php/2015/06/java-book-clean-code/) from Uncle Bob. I highly recommend reading this book.
+Uncle Bob, who is widely known in the development scene, published his new book in late 2017. You may read [Clean Code](/books/clean-code/) from Uncle Bob. I highly recommend reading this book.
 
 Description from Amazon:
 

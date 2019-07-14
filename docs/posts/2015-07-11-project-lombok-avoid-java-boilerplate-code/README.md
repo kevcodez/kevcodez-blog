@@ -117,13 +117,13 @@ public class Person
 
 That's it. We get getters, setters, equals, hashcode and even toString() methods generated automatically. Looking at the Eclipse outline, we still see, they are available.
 
-[![Lombok - @Data-Annotation Outline](https://kevcodez.de/wp-content/uploads/2015/07/lombok_data_annotation.png)](https://kevcodez.de/wp-content/uploads/2015/07/lombok_data_annotation.png)
+[Lombok - @Data-Annotation Outline](./lombok_data_annotation.png)
 
 ## Installation/Usage of Project Lombok
 
 On the official [Project Lombok Page](https://projectlombok.org/) you can download the current version. There are also setup instructions. For eclipse, simply download the jar file and execute it as admin. The IDE needs to integrate Lombok in order to properly display the outline. Every member of your team needs to have Lombok installed, in order to work with it.
 
-[![Projekt Lombok - Installation](https://kevcodez.de/wp-content/uploads/2015/07/lombok_installation.png)](https://kevcodez.de/wp-content/uploads/2015/07/lombok_installation.png)
+[Projekt Lombok - Installation](./lombok_installation.png)
 
 After installing Lombok, you need to include lombok as a dependency aswell. You need to use the provided scope.
 
