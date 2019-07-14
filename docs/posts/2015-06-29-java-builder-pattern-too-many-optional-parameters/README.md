@@ -5,12 +5,14 @@ date: "2015-06-29"
 
 ## Java Builder-Pattern - Introduction
 
-I recently blogged about [Static Factory Methods](http://kevcodez.de/index.php/2015/06/alternative-zum-java-konstruktor-static-factory-methods/). Constructors and static factory methods have on thing in common: There are both not optimal, when having too many (optional) parameters.
+I recently blogged about [Static Factory Methods](/posts/2015-06-29-alternative-zum-java-konstruktor-static-factory-methods/). 
+Constructors and static factory methods have on thing in common: There are both not optimal, when having too many (optional) parameters.
 
 ## Telescoping-Constructor-Pattern
 
 Let's take a simple Person-class with a **Telescoping-Constructor-Pattern**, which has multiple constructors to offer different ways to initiate the class.
 
+```java
 public class Person
 {
 
@@ -49,18 +51,18 @@ public class Person
   ...
 
 }
+```
 
 This pattern has a couple of disadvantages:
 
 1. Bad readability due to the amount constructors
 2. Decreased maintainability
 
-* * *
-
 ## JavaBeans-Pattern
 
 An alternative is the **JavaBeans-Pattern**, where each member has a Getter and the class has an empty constructor.
 
+```java
 public class Person
 {
 
@@ -78,17 +80,18 @@ public class Person
   /\* Getter & Setter \*/
   
 }
+```
 
 We may construct and use the class like this:
 
+```java
 Person person = new Person();
 person.setFirstName("First Name");
 person.setLastName("Last Name");
 person.setCountry("Country");
+```
 
 This solves the problems of the **Telescoping-Constructor-Pattern** with improved readability. However, this pattern allows inconsistency by splitting up the construction and value assignment. A easy-to-implement and good way to solve this, is using the **Builder-Pattern**.
-
-* * *
 
 ## Java Builder-Pattern
 
@@ -96,6 +99,7 @@ Rather than instantiating the class directly, the client calls a constructor or 
 
 Let's implement a simple builder pattern with out person class.
 
+```java
 public class Person
 {
 
@@ -165,15 +169,18 @@ public class Person
     this.country = builder.country;
   }
 
-}j
+}
+```
 
 The constructor is private by intention to allow the user to only use the builder.
 
 To create a person, we can now use the builder like this:
 
+```java
 Person person = new Person.Builder("Kevin", "G").country("Deutschland").build();
 Person person2 = new Person.Builder("Kevin", "G").build();
 Person person3 = new Person.Builder("Kevin", "G").streetAddress("Adresse").streetNumber("4").zipCode("21220").country("Deutschland").build();
+```
 
 As you can see, the **Java** **Builder-Pattern** has advantages over the **Constructors** and **Static Factory Methods**, if we have a lot of parameters.
 

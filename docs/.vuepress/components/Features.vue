@@ -13,7 +13,7 @@
         :key="index"
       >
         <router-link :to="feature.url">
-          <h2>{{ feature.title }}</h2>
+          <h2 class="feature-title">{{ feature.title }}</h2>
         </router-link>
         <p>{{ feature.details }}</p>
       </div>
@@ -46,12 +46,12 @@ export default {
   flex-basis: 30%;
   max-width: 30%;
 
-  h2 {
+  .feature-title {
     font-size: 1.4rem;
     font-weight: 500;
     border-bottom: none;
     padding-bottom: 0;
-    color: lighten(#2c3e50, 10%);
+    color: #3eaf7c;
   }
 
   p {
@@ -71,8 +71,10 @@ export default {
 
 @media (max-width: 419px) {
   .feature {
-    h2 {
-      font-size: 1.25rem;
+    a {
+      h2 {
+        font-size: 1.25rem;
+      }
     }
   }
 }

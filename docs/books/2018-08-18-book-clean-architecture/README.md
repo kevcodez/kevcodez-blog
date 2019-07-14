@@ -19,4 +19,4 @@ Description from Amazon:
 > See why designs and architectures go wrong, and how to prevent (or fix) these failures  
 > _**Clean Architecture** _is essential reading for every current or aspiring software architect, systems analyst, system designer, and software manager—and for every programmer who must execute someone else’s designs.
 
-Get it on [Amazon](https://amzn.to/2MCbyK4)
+Get it on [Amazon](https://www.amazon.de/gp/product/0134494164)

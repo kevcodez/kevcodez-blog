@@ -9,6 +9,7 @@ Project Lombok tries to reduce boilerplate code by providing annotations that ge
 
 Imagine having a Person class with three properties (_firstName_, _lastName_ und _birthDate_). This small class quickly looks like this...
 
+```java
 public class Person
 {
 
@@ -98,9 +99,11 @@ public class Person
   }
 
 }
+```
 
 Almost 100 lines of code. For three properties... Lombok offers the @Data annotation for this case.
 
+```java
 @Data
 public class Person
 {
@@ -110,29 +113,28 @@ public class Person
   private Date birthDate;
 
 }
+```
 
 That's it. We get getters, setters, equals, hashcode and even toString() methods generated automatically. Looking at the Eclipse outline, we still see, they are available.
 
-\[caption id="attachment\_298" align="aligncenter" width="262"\][![Lombok - @Data-Annotation Outline](https://kevcodez.de/wp-content/uploads/2015/07/lombok_data_annotation.png)](https://kevcodez.de/wp-content/uploads/2015/07/lombok_data_annotation.png) Lombok - @Data-Annotation Outline\[/caption\]
-
-* * *
+[![Lombok - @Data-Annotation Outline](https://kevcodez.de/wp-content/uploads/2015/07/lombok_data_annotation.png)](https://kevcodez.de/wp-content/uploads/2015/07/lombok_data_annotation.png)
 
 ## Installation/Usage of Project Lombok
 
 On the official [Project Lombok Page](https://projectlombok.org/) you can download the current version. There are also setup instructions. For eclipse, simply download the jar file and execute it as admin. The IDE needs to integrate Lombok in order to properly display the outline. Every member of your team needs to have Lombok installed, in order to work with it.
 
-\[caption id="attachment\_299" align="aligncenter" width="639"\][![Projekt Lombok - Installation](https://kevcodez.de/wp-content/uploads/2015/07/lombok_installation.png)](https://kevcodez.de/wp-content/uploads/2015/07/lombok_installation.png) Projekt Lombok - Installation\[/caption\]
+[![Projekt Lombok - Installation](https://kevcodez.de/wp-content/uploads/2015/07/lombok_installation.png)](https://kevcodez.de/wp-content/uploads/2015/07/lombok_installation.png)
 
 After installing Lombok, you need to include lombok as a dependency aswell. You need to use the provided scope.
 
+```xml
 <dependency>
   <groupId>org.projectlombok</groupId>
   <artifactId>lombok</artifactId>
   <version>1.16.4</version>
   <scope>provided</scope>
 </dependency>
-
-* * *
+```
 
 ## Features from Project Lombok
 
@@ -140,6 +142,7 @@ We have seen the **@Data**\-Annotation, which is basically just a shortcort for 
 
 **@Getter / @Setter** - Generates getters/setters on the field or class:
 
+```java
 private String firstName;
   
   public String getFirstName()
@@ -151,14 +154,18 @@ private String firstName;
   {
     this.firstName = firstName;
   }
+```
 
+```java
 @Getter @Setter
 private String firstName;
+```
 
 * * *
 
 **@Cleanup** - Automatically close resources such as InputStream or OutputStream:
 
+```java
 InputStream in = new FileInputStream(args\[0\]);
     try
     {
@@ -178,7 +185,9 @@ InputStream in = new FileInputStream(args\[0\]);
         in.close();
       }
     }
+```
 
+```java
 @Cleanup InputStream in = new FileInputStream(args\[0\]);
 byte\[\] b = new byte\[10000\];
 while (true)
@@ -187,23 +196,28 @@ while (true)
   if (r == -1)
     break;
 }
+```
 
 * * *
 
 **@ToString** - Generates a toString() method
 
+```java
 @Override
   public String toString()
   {
     return "Person \[firstName=" + firstName + ", lastName=" + lastName + ", birthDate=" + birthDate + "\]";
   }
+```
 
 is replaced by using **@ToString** on the class.
 
 * * *
 
+
 **@EqualsAndHashCode** - Generates an equals() and hashCode() method
 
+```java
 @Override
   public int hashCode()
   {
@@ -248,6 +262,7 @@ is replaced by using **@ToString** on the class.
       return false;
     return true;
   }
+```
 
 is replaced by **@EqualsAndHashCode** on the class.
 
@@ -255,10 +270,12 @@ is replaced by **@EqualsAndHashCode** on the class.
 
 **@NoArgsConstructor** - Generates an empty constructor
 
+```java
 public Person()
 {
   super();
 }
+```
 
 is replaced by **@NoArgsConstructor** on the class.
 
@@ -266,6 +283,7 @@ is replaced by **@NoArgsConstructor** on the class.
 
 **@AllArgsConstructor** - Generates a constructor with all class fields
 
+```java
 public Person(String firstName, String lastName, Date birthDate)
 {
   super();
@@ -273,6 +291,7 @@ public Person(String firstName, String lastName, Date birthDate)
   this.lastName = lastName;
   this.birthDate = birthDate;
 }
+```
 
 is replaced by **@AllArgsConstructor** on the class.
 

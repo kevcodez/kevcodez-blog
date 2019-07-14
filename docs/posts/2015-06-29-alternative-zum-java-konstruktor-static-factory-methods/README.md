@@ -7,8 +7,6 @@ date: "2015-06-29"
 
 Als Vorbild dieses Artikels dient [Effective Java - Secondary Edition by Joshua Bloch](https://www.amazon.de/gp/product/0321356683/ref=as_li_tl?ie=UTF8&camp=1638&creative=6742&creativeASIN=0321356683&linkCode=as2&tag=kevc01-21&linkId=SEPB46CIBCWK6MWL). Der normale Weg ein Objekt zu instanziieren ist es, einen Konstruktor aufzurufen. Neben dem herkömmlichen Java Konstruktor solltest du dich jedoch auch mal mit **Static Factory Methods** beschäftigen.
 
-* * *
-
 ## Beispiel
 
 Ein Beispiel für eine solche Methode bietet die Boolean-Klasse.
@@ -22,8 +20,6 @@ return b ? Boolean.TRUE : Boolean.FALSE;
 ```
 
 **Static Factory Methods** können natürlich parallel zum Konstruktor bestehen. Vielleicht fragst du dich jetzt, wozu das Ganze?
-
-* * *
 
 ## Vorteile
 
@@ -56,16 +52,12 @@ Dadurch können wir die HashMap nun folgendermaßen instanziieren...
 Map<Integer, List> map = HashMap.createInstance();
 ```
 
-* * *
-
 ## Nachteile
 
 Das klingt natürlich alles schön und gut...aber **Static Factory Methods** bringen natürlich auch Nachteile mit sich ;)
 
 1. Wenn eine Klasse nur Static Factory Methods zur Instanziierung bietet und keine Konstruktoren mit _public_ oder _protected_ als Sichtbarkeit, kann diese Klasse nicht als Subklasse fungieren
 2. Wenn jetzt noch weitere _public static_ Funktionen im Code enthalten sind, sind die **Static Factory Methods **nicht auf den ersten Blick sichtbar und fallen entsprechend weniger auf als Konstruktoren
-
-* * *
 
 ## Benamung der Static Factory Methods
 
@@ -75,8 +67,6 @@ Mir ist keine klare Konvention bekannt, aber Joshua Bloch schlägt folgende, sin
 - _of_ - Alternative zu _valueOf_, wird bei einem **EnumSet** präferiert
 - _getInstance_ - Beliebt beim Singleton-Pattern, gibt immer die selbe Instanz wieder (Instanz wird nur einmal erstellt)
 - _newInstance_ - Ähnlich wie _getInstance_, versichert jedoch, dass immer eine NEUE Instanz wiedergegeben wird
-
-* * *
 
 Wenn ihr also bei eurer nächsten Klasse Konstruktoren erstellen wollt, überlegt euch doch einmal, ob nicht eine **Static Factory Method** vielleicht sinnvoller wäre!
 

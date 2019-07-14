@@ -9,12 +9,15 @@ We could, of course, trim every string before saving, or define it in every sett
 
 Using a **FacesConverter**, we can intercept every string input and modify it. We are using the _javax.faces.convert.Converter_\-Interface that defines two methods:
 
+```java
 public Object getAsObject(FacesContext context, UIComponent component, String value);
 
 public String getAsString(FacesContext context, UIComponent component, Object value);
+```
 
 Using the **@FacesConverter**\-Annotation, the converter is registered automatically. The annotation has a property named forClass, that defines the data type for which we want to use the converter. Let's define a converter for intercepting all Strings and trim them:
 
+```java
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
@@ -37,9 +40,12 @@ public class StringTrimmer implements Converter
   }
 
 }
+```
 
 That's it. By using **_forClass = String.class_**, the converter will automatically intercept any String. If we don't specify forClass, the converter will only be used when explicitly defined in the XHTML. If we want to define an alternative name for the converter, we can do so by defining the value-attribute of the FacesConverter-Annotation.
 
+```html
 <h:inputText value="#{registrationBean.username}" required="true">
    <f:converter converterId="stringTrimmer" />
 </h:inputText>
+```

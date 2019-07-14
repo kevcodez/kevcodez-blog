@@ -13,16 +13,17 @@ Quoting Wikipedia:
 
 We usually come across properties files when dealing with configurations or translations. Those files have the following format:
 
+```
 \# Comment
 key1 = value1
 key2 = value2
+```
 
 Within the java.util package, we already have classes for reading and writing properties files.
 
-* * *
-
 ## Creating a Java Properties file
 
+```java
 Properties properties = new Properties();
 properties.setProperty("key1", "value1");
 properties.setProperty("key2", "value2");
@@ -31,10 +32,13 @@ FileOutputStream fos = new FileOutputStream("C:/test.properties");
  
 properties.store(fos, null);
 fos.flush();
+```
 
 ## Reading from a Java Properties file
 
+```java
 Properties prop = new Properties();
  
 prop.load(new FileInputStream("C:/test.properties"));
 System.out.println(prop.getProperty("key1"));
+```

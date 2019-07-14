@@ -17,7 +17,7 @@
               alt=""
             >
           </div>
-          <h2>{{post.title}}</h2>
+          <h3>{{post.title}}</h3>
           <p>{{post.description}}</p>
         </router-link>
       </div>
@@ -34,7 +34,7 @@ export default {
         .sort((a, b) => {
           return new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()
         })
-        .slice(0, 8);
+        .slice(0, 15);
 
       return files;
     }

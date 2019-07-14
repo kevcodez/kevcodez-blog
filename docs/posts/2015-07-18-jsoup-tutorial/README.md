@@ -14,22 +14,23 @@ In this Jsoup tutorial, I am going to show you how to parse a website and extrac
 
 First off, you need to include the jsoup dependency. For news, changelog and bug reports, check out the [official Jsoup page](http://jsoup.org/news/).
 
+```xml
 <dependency>
   <groupId>org.jsoup</groupId>
   <artifactId>jsoup</artifactId>
   <version>1.10.2</version>
 </dependency>
-
-* * *
+```
 
 ## Parsing a document
 
 Start by parsing HTML into a **Document**. Henceforth, we are working with that **Document**. Jsoup is called statically. Jsoup offers the following variants of parsing HTML.
 
-\[caption id="attachment\_311" align="aligncenter" width="535"\][![Jsoup - Methoden zum Parsen eines Dokumentes](https://kevcodez.de/wp-content/uploads/2015/07/jsoup-static-factory-methods.png)](https://kevcodez.de/wp-content/uploads/2015/07/jsoup-static-factory-methods.png) Jsoup - Methods for parsing HTML\[/caption\]
+[![Jsoup - Methoden zum Parsen eines Dokumentes](https://kevcodez.de/wp-content/uploads/2015/07/jsoup-static-factory-methods.png)](https://kevcodez.de/wp-content/uploads/2015/07/jsoup-static-factory-methods.png)
 
 To parse a website to a document, you can simply call the following method
 
+```java
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -49,8 +50,7 @@ public class WebsiteParser {
   }
   
 }
-
-* * *
+```
 
 ## Extract Data
 
@@ -64,6 +64,7 @@ Once we parsed the HTML to a document, we can start extracting data. Jsoup offer
 
 You can also apply further selectors on **org.jsoup.select.Elements**, making the following example valid
 
+```html
 Elements tables = doc.getElementsByAttribute("table");
     
 for(Element table : tables)
@@ -77,8 +78,7 @@ for(Element table : tables)
      // ...
    }
 }
-
-* * *
+```
 
 ## CSS Selector
 
@@ -119,8 +119,6 @@ Elements lastTableChild = doc.select("table > tbody > tr:last-child"); // Get th
 
 [List of all selectors on Jsoup.org](http://jsoup.org/cookbook/extracting-data/selector-syntax)
 
-* * *
-
 ## Real-World example - Parsing dependency versions from mvnrepository.com
 
 Theory is one thing, but let us see Jsoup in action with a real-world example.
@@ -129,6 +127,7 @@ Let's try parsing the dependency versions from a library, let's take [Async-Http
 
 This is how the source code of the page looks like:
 
+```html
 <table class="grid versions" width="100%">
    <thead>
       <tr>
@@ -150,11 +149,13 @@ This is how the source code of the page looks like:
       ...
   </tbody>
 </table>
+```
 
 We want to parse the exact version (1.9.30), the type (release) - could be release, beta, general availability or something else and the usages (2).
 
 Let's create a POJO representing a dependency.
 
+```java
 public class MavenDependency {
 
   private String group;
@@ -171,11 +172,14 @@ public class MavenDependency {
  // ToString
 
 }
+```
 
 Start by parsing the website
 
+```java
 // Parse website with a 5 secodn timeout
 Document document = Jsoup.parse(new URL("http://mvnrepository.com/artifact/com.ning/async-http-client"), 5000);
+```
 
 Using the css selector **table.versions > tbody > tr**, we get all rows containing the versions. It is important to select the tbody, else we wil also get unnecessary information from the tables's head.
 
@@ -189,6 +193,7 @@ Now that we have the rows, we continue extracting the exact information for a si
 
 There are probably a bunch of other ways to access this data. This is how the entire code looks like
 
+```java
 public class MavenParser {
 
   private static final String MVN\_REPO\_BASE\_SEARCH\_URL = "http://mvnrepository.com/artifact/";
@@ -226,3 +231,4 @@ public class MavenParser {
   }
 
 }
+```

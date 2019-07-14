@@ -31,20 +31,28 @@ If you are using Java, you should consider installing **PMD, FindBugs and possib
 
 By default, SonarQube launches with an In-Memory database. To have persistent analysis, you need to configure a database. Navigate into the conf directory and open up the **sonar.properties** file.  Edit the following properties:
 
+```
 sonar.jdbc.username=tickeos
 sonar.jdbc.password=topsecret
+```
 
 # Postgres Example
+```
 sonar.jdbc.url=jdbc:postgresql://localhost/sonar
+```
 
 # MySQL Example
+```
 sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance
+```
 
 The config contains multiple examples for JDBC configuration. Make sure the database exists.
 
 After changing the configuration, restart SonarQube.
 
+```sh
 $SONAR\_HOME/bin/linux-x86-64/sonar.sh restart
+```
 
 ## Setting up SonarQube Scanner
 
@@ -54,7 +62,9 @@ Download the [SonarQube Scanner (CLI)](http://docs.sonarqube.org/display/SCAN/An
 
 Unpack the SonarQube Scanner and navigate into the conf directory. Open up the **sonar-scanner.properties**.
 
+```
 sonar.host.url=http://127.0.0.1:9000
+```
 
 You are ready to analyze your Multi-Module Maven Project!
 
@@ -71,34 +81,47 @@ There are multiple ways of configuring SonarQube for your project. You may defin
 
 Create a sonar-project.properties file in the parent folder.
 
+```
 sonar.projectKey=projectKey
 sonar.projectName=Project Name
 sonar.projectVersion=1.0
 
 sonar.modules=Module1,Module2,Module3
+```
 
 # Modules inherit properties set at parent level
+
+```
 sonar.sources=src
 sonar.sourceEncoding=UTF-8
 sonar.language=java
+```
 
 You have to define each module in **sonar.modules** property.
 
 Navigate into the Parent folder and execute Maven and afterwards, execute the Scanner.
 
+```sh
 mvn clean install
+```
 
 # Linux
+
+```sh
 /path/to/sonar-scanner/bin/sonar-scanner -Dsonar.login=admin -Dsonar.password=admin
+```
 
 # Windows
+
+```sh
 C:/Apps/sonar-scanner-2.8/bin/sonar-scanner.bat -Dsonar.login=admin -Dsonar.password=admin
+```
 
 By the way, you can also pass the parameter for **sonar.host.url** in here, if you do not want to edit the sonar-scanner.properties.
 
 When navigating the [Projects Administration Page (Adminstration > Projects > Management)](http://localhost:9000/projects_admin) you should be able to see your Projects. Click on the project and you should see the results from the analysis.
 
-\[caption id="attachment\_442" align="alignnone" width="1570"\][![Undertow, analyzed with SonarQube, Project overview](https://kevcodez.de/wp-content/uploads/2017/01/sonar_analysis.png)](https://kevcodez.de/index.php/2017/01/analyzing-a-multi-module-maven-project-with-sonarqube/sonar_analysis/) Image contains the overview of an analyzed project in SonarQube\[/caption\]
+[![Undertow, analyzed with SonarQube, Project overview](https://kevcodez.de/wp-content/uploads/2017/01/sonar_analysis.png)](https://kevcodez.de/index.php/2017/01/analyzing-a-multi-module-maven-project-with-sonarqube/sonar_analysis/)
 
 Go to Issues to see the issues that were analyzed. You can also disable rules under Quality Profiles, if you find rules that do not apply to your project or you do not want to see.
 

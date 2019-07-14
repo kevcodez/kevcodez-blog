@@ -7,7 +7,7 @@ date: "2015-06-29"
 
 Java Book: Effective Java - meiner Meinung nach ein Muss für Java-Programmierer. The book contains 78 passages with code samples to become a better programmer. The book costs about 30,00 €. [Effective Java - Second Edition on Amazon](https://www.amazon.de/gp/product/0321356683/ref=as_li_tl?ie=UTF8&camp=1638&creative=6742&creativeASIN=0321356683&linkCode=as2&tag=kevc01-21&linkId=SEPB46CIBCWK6MWL)
 
-\[caption id="attachment\_13" align="aligncenter" width="217"\][![Effective Java - Second Edition](https://kevcodez.de/wp-content/uploads/2015/06/Download-217x300.jpg "Effective Java - Second Edition")](https://www.amazon.de/gp/product/0321356683/ref=as_li_tl?ie=UTF8&camp=1638&creative=6742&creativeASIN=0321356683&linkCode=as2&tag=kevc01-21&linkId=SEPB46CIBCWK6MWL) Effective Java - Second Edition\[/caption\]
+[![Effective Java - Second Edition](./effective-java.jpg "Effective Java - Second Edition")](https://www.amazon.de/gp/product/0321356683/ref=as_li_tl?ie=UTF8&camp=1638&creative=6742&creativeASIN=0321356683&linkCode=as2&tag=kevc01-21&linkId=SEPB46CIBCWK6MWL)
 
 Description from Amazon
 

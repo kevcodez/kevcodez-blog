@@ -5,12 +5,15 @@ date: "2015-07-03"
 
 You've probably came across the situtation of having a checkbox in a frontend that needs to be checked in order to continue. A common example for this case is accepting the terms of use in a registration form. A simple method for solving this, is checking the value in your registration method:
 
+```html
 <label class="checkbox">
       <h:selectBooleanCheckbox value="#{bean.acceptsTAC}" id="idTAC" requiredMessage="Sie müssen die AGB akzeptieren." />
       <i></i>
       <span style="font-size: 13px">Ich akzeptiere die <a href="/generalTermsAndConditions" target="\_blank">AGB</a> und <a href="/privacyPolicy" target="\_blank">Datenschutzrichtlinien</a>.</span>
 </label>
+```
 
+```java
 // Terms And Conditions
 private boolean acceptsTAC;
 
@@ -35,15 +38,15 @@ public void doRegistration()
     // AGB wurde akzeptiert
   }
 }
+```
 
 This works. However, the form needs to be sent to the server first. required=true will also not work in this case. Also, if we have multiple places where we need to verify that a checkbox is checked, we have to duplicate the code.
-
-* * *
 
 ## JSF Required Checkbox using FacesValidator
 
 Wouldn't it be nicer to include our check during form validation? Let's use a **FacesValidator** to do exactly this. Our FacesValidator checks, if a component has a specific value. By using the **@FacesValidator** annotation, the validator is registered automatically and ready to be used in the XHTML.
 
+```java
 package de.kevcodez.faces.validators;
 
 import java.text.MessageFormat;
@@ -88,9 +91,11 @@ public class RequiredCheckboxValidator implements Validator
   }
 
 }
+```
 
 A sample usage of our RequiredCheckboxValidator:
 
+```html
 <label class="checkbox">
       <h:selectBooleanCheckbox id="idTAC" requiredMessage="Sie müssen die AGB akzeptieren.">
            <f:validator validatorId="requiredCheckboxValidator" />
@@ -98,6 +103,7 @@ A sample usage of our RequiredCheckboxValidator:
       <i></i>
       <span style="font-size: 13px">Ich akzeptiere die <a href="/generalTermsAndConditions" target="\_blank">AGB</a> und <a href="/privacyPolicy" target="\_blank">Datenschutzrichtlinien</a>.</span>
 </label>
+```
 
 When submitting the form, i.e. by pressing a button, the form is validated. If the checkbox is not checked, the **RequiredCheckboxValidator** will throw a _ValidatorException_. The _doRegistration()_ won't be invoked. All possible values of the selectBooleanCheckbox can be found here - [Tutorialspoint - selectBooleanCheckbox](https://www.tutorialspoint.com/jsf/jsf_selectbooleancheckbox_tag.htm).
 

@@ -9,12 +9,11 @@ The following image offers an overview of the API's structure.
 
 \[caption id="attachment\_330" align="aligncenter" width="862"\][![UML Modell - Source: heise.de](https://kevcodez.de/wp-content/uploads/2015/07/Abbildung-UMLModell-Class-java-time-Kernklassen-3f94267461887b37.png)](https://kevcodez.de/wp-content/uploads/2015/07/Abbildung-UMLModell-Class-java-time-Kernklassen-3f94267461887b37.png) UML Modell - Source: heise.de\[/caption\]
 
-* * *
-
 ## LocalDate
 
 Let's have a look at **java.time.LocalDate** first. A LocalDate represents a single Date in a specific year, month and date, no time. If you also need the time, you can use the LocalDateTime class, but let us focus on the LocalDate for now.
 
+```java
 // Today
 LocalDate currentDate = LocalDate.now();
 
@@ -29,26 +28,26 @@ LocalDate firstAug2014 = LocalDate.of(2014, 8, 1);
 
 // The 65th day in 2010 (06.03.2010)
 LocalDate sixtyFifthDayOf2010 = LocalDate.ofYearDay(2010, 65);
-
-* * *
+```
 
 ## LocalTime
 
 The class java.time.LocalTime represents a time with a specific hour, minute, second and nanosecond.
 
+```java
 LocalTime currentTime = LocalTime.now(); // Current time
 LocalTime midday = LocalTime.of(12, 0); // 12:00 Uhr
 LocalTime afterMidday = LocalTime.of(13, 30, 15); // 13:30:15 O'clock
  
 // 12345th second of the day (03:25:45 Uhr)
 LocalTime fromSecondsOfDay = LocalTime.ofSecondOfDay(12345);
-
-* * *
+```
 
 ## LocalDateTime
 
 The class LocalDateTime combines LocalTime and LocalDate and offers a date (year, month, day) + time (hour, minute, second, nanosecond).
 
+```java
 // Current date with time
 LocalDateTime currentDateTime = LocalDateTime.now();
  
@@ -57,11 +56,11 @@ LocalDateTime secondAug2014 = LocalDateTime.of(2014, 10, 2, 12, 30);
  
 // 24.12.2014 12:00 O'clock
 LocalDateTime christmas2014 = LocalDateTime.of(2014, Month.DECEMBER, 24, 12, 0);
-
-* * *
+```
 
 ## Information about Date and Time
 
+```java
 LocalDate date = LocalDate.of(2014, 2, 15); // 15.02.2014
  
 boolean isBefore = LocalDate.now().isBefore(date); // false
@@ -92,13 +91,13 @@ int hour = time.getHour(); // 15
 int second = time.getSecond(); // 0
 int minute = time.getMinute(); // 30
 int secondOfDay = time.toSecondOfDay(); // 55800
-
-* * *
+```
 
 ## Manipulate Date and Time
 
 With the new Date Time API, you can easily manipulate date and time.
 
+```java
 // Tomorrow
 LocalDate tomorrow = LocalDate.now().plusDays(1);
  
@@ -114,13 +113,13 @@ LocalDate firstDayOfMonth = date.with(TemporalAdjusters.firstDayOfMonth());
  
 // Last day of february - 28.02.2014
 LocalDate lastDayOfMonth = date.with(TemporalAdjusters.lastDayOfMonth());
-
-* * *
+```
 
 ## TimeZones
 
 If we need to handle time zones with the new Date Time API, we can use **java.time.ZonedDateTime** or **java.time.OffsetDateTime**.
 
+```java
 ZoneId losAngeles = ZoneId.of("America/Los\_Angeles");
 ZoneId berlin = ZoneId.of("Europe/Berlin");
  
@@ -147,13 +146,13 @@ OffsetDateTime plusFive = OffsetDateTime.of(date, offset);
  
 // 19.07.2013 20:30 O'clock -02:00
 OffsetDateTime minusTwo = plusFive.withOffsetSameInstant(ZoneOffset.ofHours(-2));
-
-* * *
+```
 
 ## Timestamps
 
 Using **java.time.Instant**, we may use timestampts. Such Timestamp begins at the 1st January of 1970, also known as EPOCH. The values of the instant may be negative. The standard used is [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601).
 
+```java
 // Current time
 Instant now = Instant.now();
  
@@ -177,13 +176,13 @@ long toEpochMillis = now.toEpochMilli();
  
 // Plus/Minus methods are also available
 Instant nowPlusTenSeconds = now.plusSeconds(10);
-
-* * *
+```
 
 ## **Periods and Durations**
 
 Period and Duration are two important classes in the new Date Time API. A Period is based on a date and a Duration is based on a time. Duration is used by Instants. Periods and duration may be negative, if the first date or time is after the second date or time.
 
+```java
 // Periods
  
 LocalDate firstDate = LocalDate.of(2010, 5, 17); // 17.05.2010
@@ -217,13 +216,13 @@ long absoluteResult = between.abs().toMinutes();
  
 // Two hours in seconds (7200)
 long twoHoursInSeconds = Duration.ofHours(2).getSeconds();
-
-* * *
+```
 
 ## **Formatting and Parsing**
 
 Using the methods **format()** **and parse()** you can easily parse date and time.
 
+```java
 // 01.04.2014 10:45 O'clock
 LocalDateTime dateTime = LocalDateTime.of(2014, Month.APRIL, 1, 10, 45);
  
@@ -251,13 +250,13 @@ String germanDateTime = dateTime.format(formatter);
 LocalDate fromIsoDate = LocalDate.parse("2014-01-20");
 LocalDate fromIsoWeekDate = LocalDate.parse("2014-W14-2", DateTimeFormatter.ISO\_WEEK\_DATE);
 LocalDate fromCustomPattern = LocalDate.parse("20.01.2014", DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-
-* * *
+```
 
 ## **Conversion**
 
 We also need an option to convert from the old Date API.
 
+```java
 // LocalDate/LocalTime <-> LocalDateTime
 LocalDate date = LocalDate.now();
 LocalTime time = LocalTime.now();
@@ -280,8 +279,7 @@ ZonedDateTime zonedDateTimeFromGregorianCalendar = new GregorianCalendar().t
 Date dateFromInstant = Date.from(Instant.now());
 TimeZone timeZone = TimeZone.getTimeZone(ZoneId.of("America/Los\_Angeles"));
 GregorianCalendar gregorianCalendar = GregorianCalendar.from(ZonedDateTime.now());
-
-* * *
+```
 
 ## Sources
 

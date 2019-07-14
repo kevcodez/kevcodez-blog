@@ -14,12 +14,11 @@ Wikipedia definiert einen Singleton folgendermaßen
 
 Bei einer Singleton-Klasse sollte defintiv sichergestellt werden, dass der Client das Objekt nicht neu instanziieren kann. Für die Umsetzung des Java Singleton Pattern gibt gibt es generell zwei Möglichkeiten, die ich euch mit den folgenden Code-Beispielen aufzeigen möchte.
 
-* * *
-
 ## Möglichkeit #1
 
 Eine **Static-Factory-Methode** zum wiedergeben der bereits vorhandenen Instanz...Ganz wichtig, wie bereits erwähnt, der private Konstruktor...
 
+```java
 public class SingletonClass {
 
 private static final SingletonClass INSTANCE = new SingletonInstance();
@@ -34,13 +33,13 @@ public static SingletonClass getInstance() { return INSTANCE; }
 public void otherMethod() { ... }
 
 }
-
-* * *
+```
 
 ## Möglichkeit #2 (Empfohlen)
 
 Die zweite Möglichkeit, die ich allerdings noch nie in einem Produktivsystem gesehen habe, wobei nichts für mich dagegen spricht, ist die Erstellung eines **Enums** mit einem einzigen Typen. Enums können sowieso nur statisch aufgerufen werden. Der Enum hat einen einzigen Typen, über den dann sämtliche Methoden ausgeführt werden.
 
+```java
 public enum SingletonClass {
 
 INSTANCE;
@@ -50,6 +49,7 @@ public void otherMethod() { ... }
 // Weitere Methoden
 
 }
+```
 
 Diese Methode bietet mehrere Vorteile
 
@@ -59,10 +59,12 @@ Diese Methode bietet mehrere Vorteile
 
 Genutzt wird dieser Enum dann wie jeder andere...
 
+```java
 SingletonClass.INSTANCE.otherMethod();
+```
 
 * * *
 
 Dieser Artikel nimmt sich Effective Java - Second Edition von Joshua Bloch als Vorbild in dem diese Vorschläge zum Java Singleton Pattern vorgeschlagen werden. Weitere Details zum Buch findet ihr unter [Effective Java - Second Edition von Joshua Bloch](http://kevcodez.de/index.php/2015/06/java-buch-effective-java-second-edition-von-joshua-bloch/).
 
-\[caption id="attachment\_13" align="aligncenter" width="217"\][![Effective Java - Second Edition](https://kevcodez.de/wp-content/uploads/2015/06/Download-217x300.jpg "Effective Java - Second Edition")](https://www.amazon.de/gp/product/0321356683/ref=as_li_tl?ie=UTF8&camp=1638&creative=6742&creativeASIN=0321356683&linkCode=as2&tag=kevc01-21&linkId=SEPB46CIBCWK6MWL) Effective Java - Second Edition\[/caption\]
+[![Effective Java - Second Edition](https://kevcodez.de/wp-content/uploads/2015/06/Download-217x300.jpg "Effective Java - Second Edition")](https://www.amazon.de/gp/product/0321356683/ref=as_li_tl?ie=UTF8&camp=1638&creative=6742&creativeASIN=0321356683&linkCode=as2&tag=kevc01-21&linkId=SEPB46CIBCWK6MWL)
