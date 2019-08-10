@@ -1,4 +1,7 @@
-# Logging from Docker Services to Elasticsearch with Fluent Bit
+---
+title: "Logging from Docker Services to Elasticsearch with Fluent Bit"
+date: "2019-08-10"
+---
 
 In this guide I'd like to show you how to setup the lightweight log processor and forwarder [Fluent Bit](https://fluentbit.io/) as docker logging driver to catch all `stdout` produced by your containers, process the logs, and forward them to Elasticsearch.
 
