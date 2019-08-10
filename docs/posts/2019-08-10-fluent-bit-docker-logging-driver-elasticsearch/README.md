@@ -1,7 +1,9 @@
 ---
-title: "Logging from Docker Services to Elasticsearch with Fluent Bit"
+title: "Logging from Docker Containers to Elasticsearch with Fluent Bit"
 date: "2019-08-10"
 ---
+
+# Logging from Docker Containers to Elasticsearch with Fluent Bit
 
 In this guide I'd like to show you how to setup the lightweight log processor and forwarder [Fluent Bit](https://fluentbit.io/) as docker logging driver to catch all `stdout` produced by your containers, process the logs, and forward them to Elasticsearch.
 
@@ -16,13 +18,13 @@ Rather than configuring your applications to send logs to your log storage (Elas
 In a dockerized environment with multiple services, where each container is isolated and logs on it's own, we need an interface to collect those logs.
 **Docker Logging Driver** to the rescue.
 Each docker daemon has a logging driver, which each container uses.
-That way, each log entry will flow through the logging driver, enabling us to process and forward it.
+That way, each log entry will flow through the logging driver, enabling us to process and forward it in a central place.
 
 ## Fluent Bit vs Fluentd
 
 A popular library to solve this is [Fluentd](https://www.fluentd.org/). An open source log collector, processor and aggregator written in Ruby, first published in 2011.
 
-Fluent Bit is an open source log collector created by the same folgs, written in C, first published in 2015.
+Fluent Bit is an open source log collector created by the same folks, written in C, first published in 2015.
 
 |              | Fluentd                                                           | Fluent Bit                                                        |
 | ------------ | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
@@ -143,8 +145,6 @@ Our Fluent Bit container should log something like this
 > [0] docker.{.ID}}: [1565471735.000000000, {"container_id"=>"50f42a398149729c3c24b621f6da2ac943a19b565c99b665e37ec5b8c8c9a3df", "container_name"=>"/zealous_proskuriakova", "source"=>"stdout", "log"=>"Kevcodez"}][2019/08/10 21:15:39] [debug][task] created task=0x7f2c838430c0 id=0 OK
 > [2019/08/10 21:15:39][debug] [task] destroy task=0x7f2c838430c0 (task_id=0)
 
-Fluent Bit offers built-in parsers for _Apache_, _Nginx_, _Docker_, _Syslog rfc5424_ and _Syslog rfc3164_.
-
 ## Send logs to Elasticsearch
 
 To forward the Logs to Elasticsearch, we simply have to change the output plugin.
@@ -167,7 +167,7 @@ Fluent Bit comes with an [Elasticsearch Output Plugin](https://docs.fluentbit.io
     # tls.verify Off
 ```
 
-Let's spin up Elasticsearch, Fluent Bit and our sample nginx application.
+Let's spin up Elasticsearch, Fluent Bit and our sample ubuntu application that produces a log.
 
 ```yml
 version: "3.5"
@@ -257,7 +257,7 @@ Since we configured the logging level in Fluent Bit to _debug_, we should also s
 > fluentbit_1 | [2019/08/10 21:50:36][debug] [task] destroy task=0x7f9aff4430c0 (task_id=0)
 
 That's it.
-The docker application simply uses stdout, the docker logging driver forwards the logs to Fluent Bit.
+The docker application simply uses `stdout`, the docker logging driver forwards the logs to Fluent Bit.
 Fluent Bit forwards them to Elasticsearch.
 
-Sources from the docker-compose files can configs can also be found [here](https://github.com/kevcodez/fluent-bit-docker-driver-elasticsearch).
+Sources from the docker-compose files and configs can be found [here](https://github.com/kevcodez/fluent-bit-docker-driver-elasticsearch).
