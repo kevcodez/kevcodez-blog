@@ -91,7 +91,8 @@ Let's test our simple configuration.
 For Fluent Bit to receive every log produced by a container to process and forward, we need to setup Fluent Bit as Docker Logging Driver.
 
 We need to use the **forward** input plugin for Fluent Bit.
-Forward is the protocol used by Fluent Bit and Fluentd to route messages between peers. This plugin implements the input service to listen for Forward messages.
+Forward is the protocol used by Fluent Bit and Fluentd to route messages between peers.
+This plugin implements the input service to listen for Forward messages.
 To check if everything is running just fine, we will keep the `stdout` plugin for now.
 
 ```apacheconf
@@ -100,34 +101,46 @@ To check if everything is running just fine, we will keep the `stdout` plugin fo
 
 [INPUT]
     Name forward
-    unix_path /var/run/fluent.sock
     Listen 0.0.0.0
-    Port 24224
-
-# Fluent Bit offers built-in parsers for *Apache*, *Nginx*, *Docker*, *Syslog rfc5424* and *Syslog rfc3164*.
-# For the sake of simplicy, we will launch a default nginx image as docker container to collect some logs from.
-[FILTER]
-    Name filter-nginx
-    Match **
-    Parser nginx
+    port 24224
 
 [OUTPUT]
     Name stdout
+    Match **
 ```
 
-Let's build a new docker image with the configuration above and start a container.
+Let's spin everything up with docker-compose:
 
-```shell
-docker build -t fluentbit:driver-stdout .
-docker run -it fluentbit:driver-stdout
+```yml
+version: "3.5"
+services:
+  fluentbit:
+    build: .
+    ports:
+      - "24224:24224"
+      - "24224:24224/udp"
+  ubuntu:
+    image: ubuntu
+    command: [/bin/echo, "Kevcodez"]
+    depends_on:
+      - fluentbit
+    logging:
+      driver: fluentd
+      options:
+        tag: docker-ubuntu
 ```
+
+![Simple Config](./driver-stdout.gif)
 
 To use an alternative logging driver, we can simply pass a `--log-driver` argument when starting the container.
 This can be configured globally aswell. Refer to the [Docker Docs](https://docs.docker.com/config/containers/logging/configure/).
 
-```shell
-docker run -it --log-driver=fluentd nginx
-```
+Our Fluent Bit container should log something like this
+
+> [0] docker.{.ID}}: [1565471735.000000000, {"container_id"=>"50f42a398149729c3c24b621f6da2ac943a19b565c99b665e37ec5b8c8c9a3df", "container_name"=>"/zealous_proskuriakova", "source"=>"stdout", "log"=>"Kevcodez"}][2019/08/10 21:15:39] [debug][task] created task=0x7f2c838430c0 id=0 OK
+> [2019/08/10 21:15:39][debug] [task] destroy task=0x7f2c838430c0 (task_id=0)
+
+Fluent Bit offers built-in parsers for _Apache_, _Nginx_, _Docker_, _Syslog rfc5424_ and _Syslog rfc3164_.
 
 ## Send logs to Elasticsearch
 
@@ -136,7 +149,7 @@ Fluent Bit comes with an [Elasticsearch Output Plugin](https://docs.fluentbit.io
 
 ```apacheconf
 [OUTPUT]
-Name es
+    Name es
     Match **
     Host 127.0.0.1
     Port 9243
@@ -153,20 +166,95 @@ Name es
 
 Let's spin up Elasticsearch, Fluent Bit and our sample nginx application.
 
-```sh
+```yml
+version: "3.5"
+services:
+  elasticsearch:
+    image: elasticsearch:7.3.0
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - discovery.type=single-node
+  fluentbit:
+    build: .
+    ports:
+      - "24224:24224"
+      - "24224:24224/udp"
+    depends_on:
+      - elasticsearch
+  ubuntu:
+    image: ubuntu
+    command: [/bin/echo, "Kevcodez"]
+    depends_on:
+      - fluentbit
+    logging:
+      driver: fluentd
+      options:
+        tag: docker-ubuntu
+```
 
+```sh
+docker-compose up
 ```
 
 Let's check if our logs arrived in Elasticsearch
 
+```sh
+curl localhost:9200/_cat/indices
 ```
 
+> yellow open logstash-2019.08.10 RevxDUH3Qpm1JTyObFhbqA 1 1 1 0 6.2kb 6.2kb
+
+```sh
+curl localhost:9200/logstash-2019.08.10/_search?pretty=true&q={'matchAll':{''}}
+```
+
+```json
+{
+  "took": 43,
+  "timed_out": false,
+  "_shards": {
+    "total": 1,
+    "successful": 1,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": {
+      "value": 1,
+      "relation": "eq"
+    },
+    "max_score": 1.0,
+    "hits": [
+      {
+        "_index": "logstash-2019.08.10",
+        "_type": "flb_type",
+        "_id": "ID-DfWwBIbjYepeiDcpc",
+        "_score": 1.0,
+        "_source": {
+          "@timestamp": "2019-08-10T21:50:25.000Z",
+          "container_id": "dd2cc9f525b8a59c239d8728d10e044c8ab3640e08b082e497020b3a1241124a",
+          "container_name": "/config-driver-elasticsearch_ubuntu_1",
+          "source": "stdout",
+          "log": "Kevcodez"
+        }
+      }
+    ]
+  }
+}
 ```
 
 Since we configured the logging level in Fluent Bit to _debug_, we should also see the forwarding in action:
 
-```
+> fluentbit_1 | [2019/08/10 21:50:36][debug] [out_es] HTTP Status=200 URI=/\_bulk
+> fluentbit_1 | [2019/08/10 21:50:36][debug] [out_es Elasticsearch response
+> fluentbit_1 | {"took":424,"errors":false,"items":[{"index":{"_index":"logstash-2019.08.10","_type":"flb_type","_id":"ID-DfWwBIbjYepeiDcpc","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":0,"_primary_term":1,"status":201}}]}
+> fluentbit_1 | [2019/08/10 21:50:36][debug] [task] destroy task=0x7f9aff4430c0 (task_id=0)
 
-```
+That's it.
+The docker application simply uses stdout, the docker logging driver forwards the logs to Fluent Bit.
+Fluent Bit forwards them to Elasticsearch.
 
-That's it. The docker application simply uses stdout, the docker logging driver forwards the logs to Fluent Bit. Fluent Bit parses the entries and forwards them to Elasticsearch.
+Sources from the docker-compose files can configs can also be found [here](https://github.com/kevcodez/fluent-bit-docker-driver-elasticsearch).
