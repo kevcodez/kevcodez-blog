@@ -5,9 +5,9 @@ date: "2019-08-10"
 
 # Logging from Docker Containers to Elasticsearch with Fluent Bit
 
-In this guide I'd like to show you how to setup the lightweight log processor and forwarder [Fluent Bit](https://fluentbit.io/) as docker logging driver to catch all `stdout` produced by your containers, process the logs, and forward them to Elasticsearch.
+This guide explains how to setup the lightweight log processor and forwarder [Fluent Bit](https://fluentbit.io/) as docker logging driver to catch all `stdout` produced by your containers, process the logs, and forward them to Elasticsearch.
 
-[Twelve-Factor](https://12factor.net/) says the following about Logs
+[Twelve-Factor](https://12factor.net/) says the following about logs
 
 > A twelve-factor app never concerns itself with routing or storage of its output stream. It should not attempt to write to or manage logfiles.
 > Instead, each running process writes its event stream, unbuffered, to stdout.
@@ -41,7 +41,7 @@ Taken from the [official documentation](https://docs.fluentbit.io/manual/v/1.2/a
 Regarding ecosystem, Fluentd is a lot more mature and adpoted.
 However, Fluent Bit takes about 1/10 of the resources and does offer plugins for standard tooling.
 
-For simple cases that involve standard tooling (like Elasticsearch) and don't focus on aggregation and rather on processing and forwarding, I'd recommend using Fluentbit.
+For simple cases that involve standard tooling (like Elasticsearch) and not focus on aggregation and rather processing and forwarding, I'd recommend using Fluent Bit.
 
 ## Getting started with Fluent Bit
 
@@ -135,10 +135,14 @@ services:
         tag: docker-ubuntu
 ```
 
+In case you are wondering if `fluentd` as logging driver was a typo - it's not. 
+Fluentd and Fluent Bit both use `fluentd` Docker Logging Driver.
+The [forward protocol](https://github.com/fluent/fluentd/wiki/Forward-Protocol-Specification-v1) is used.
+
 ![Simple Config](./driver-stdout.gif)
 
 To use an alternative logging driver, we can simply pass a `--log-driver` argument when starting the container.
-This can be configured globally aswell. Refer to the [Docker Docs](https://docs.docker.com/config/containers/logging/configure/).
+This can be configured globally as well. Refer to the [Docker Docs](https://docs.docker.com/config/containers/logging/configure/).
 
 Our Fluent Bit container should log something like this
 
@@ -147,7 +151,7 @@ Our Fluent Bit container should log something like this
 
 ## Send logs to Elasticsearch
 
-To forward the Logs to Elasticsearch, we simply have to change the output plugin.
+To forward the logs to Elasticsearch, we simply have to change the output plugin.
 Fluent Bit comes with an [Elasticsearch Output Plugin](https://docs.fluentbit.io/manual/output/elasticsearch) built-in.
 
 ```apacheconf
