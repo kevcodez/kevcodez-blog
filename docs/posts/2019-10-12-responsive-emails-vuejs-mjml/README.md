@@ -1,9 +1,9 @@
 ---
-title: "Responsive E-Mails with Vue.js and MJML"
+title: "Responsive E-Mails with Vue.js and mjml"
 date: "2019-10-12"
 ---
 
-# Responsive E-Mails with Vue.js and mjml
+# Responsive E-Mails with Vue.js and mjml rendered on the server
 
 A colleague recently introduced me to [mjml](https://mjml.io/), a framework that makes responsive emails easy.
 If you ever had to create emails in plain HTML/CSS that look good on *all* clients, you know the hustle.
@@ -197,3 +197,8 @@ renderer.renderToString(app).then(html => {
     console.log(plainHtml.html)
 })
 ```
+
+mjml supports a few options to modify the output (i.e. minify/beautify/fonts).
+Check out the [Github Readme](https://github.com/mjmlio/mjml) for the options.
+
+We could now build a simple API that receives some data to dynamically render response email templates and send them to our users.
