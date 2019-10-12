@@ -202,3 +202,5 @@ mjml supports a few options to modify the output (i.e. minify/beautify/fonts).
 Check out the [Github Readme](https://github.com/mjmlio/mjml) for the options.
 
 We could now build a simple API that receives some data to dynamically render response email templates and send them to our users.
+
+Source code on [Github](https://github.com/kevcodez/vuejs-server-renderer-mjml).
