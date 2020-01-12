@@ -39,7 +39,7 @@ export default {
         if (diff > 0) return -1;
         if (diff < 0) return 1;
         return 0;
-      }).slice(0, 8);
+      }).slice(0, 12);
 
       return files;
     }
