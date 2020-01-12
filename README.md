@@ -1,1 +1,1 @@
-Currently a migration from Wordpress to Vuepress from https://kevcodez.de
+Source repository for my blog https://kevcodez.de, based on Vuepress.
