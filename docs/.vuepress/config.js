@@ -2,15 +2,25 @@ module.exports = {
   title: 'kevcodez - Developer Blog',
   description: 'Developer Blog - Java, Kotlin, Spring, Postgres, DevOps, Dev stuff',
   themeConfig: {
+    nav: [{
+        text: 'Twitter',
+        link: 'https://twitter.com/kevcodez',
+        target: '_blank'
+      },
+      {
+        text: 'Github',
+        link: 'https://github.com/kevcodez',
+        target: '_blank'
+      }
+    ],
     repo: 'kevcodez/kevcodez-blog',
     repoLabel: 'Contribute!',
     docsDir: 'docs',
     editLinks: true,
     editLinkText: 'Help improve this page!',
-    sidebar: [
-      {
-        title: 'Latest posts'
-      }]
+    sidebar: [{
+      title: 'Latest posts'
+    }]
   },
   plugins: [
     ['@vuepress/pwa',

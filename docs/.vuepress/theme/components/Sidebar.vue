@@ -4,54 +4,94 @@
       <li>
         <section class="sidebar-group">
           <p class="sidebar-heading">
+            <span>Follow me</span>
+          </p>
+        </section>
+        <ul class="sidebar-sub-headers">
+          <li class="sidebar-sub-header">
+            <a
+              class="sidebar-link"
+              style="display: flex"
+              href="https://twitter.com/kevcodez"
+              target="_blank"
+            >
+              <div
+                style="height: 32px; width: 32px; margin-right: 0.5em; display: flex; justify-content: center; align-items: center"
+              >
+                <img src="/Twitter_Logo_Blue.png" style="height: 32px; width; 32px;" />
+              </div>
+
+              <span style="align-self: center">kevcodez</span>
+            </a>
+          </li>
+          <li class="sidebar-sub-header">
+            <a
+              class="sidebar-link"
+              style="display: flex"
+              href="https://github.com/kevcodez"
+              target="_blank"
+            >
+              <div
+                style="height: 32px; width: 32px;margin-right: 0.5em;  display: flex; justify-content: center; align-items: center"
+              >
+                <img src="/GitHub-Mark-64px.png" style="height: 25px; width; 25px; " />
+              </div>
+
+              <span style="align-self: center">kevcodez</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <section class="sidebar-group">
+          <p class="sidebar-heading">
             <span>Recent posts</span>
           </p>
         </section>
         <ul class="sidebar-sub-headers">
           <li class="sidebar-sub-header" v-for="post in recentFiles">
-            <a
-              class="sidebar-link"
-              :href="post.path"
-            >{{post.title}}</a>
+            <a class="sidebar-link" :href="post.path">{{post.title}}</a>
           </li>
         </ul>
       </li>
     </ul>
-
   </aside>
 </template>
 
 <script>
 export default {
-  name: 'Sidebar',
-  props: ['items'],
-  data () {
+  name: "Sidebar",
+  props: ["items"],
+  data() {
     return {};
   },
   computed: {
-    recentFiles () {
-      let files = this.$site.pages.filter(p => {
-        return p.path.indexOf('/posts/') >= 0;
-      }).sort((a, b) => {
-        let aDate = new Date(a.frontmatter.date).getTime();
-        let bDate = new Date(b.frontmatter.date).getTime();
-        let diff = aDate - bDate;
-        if (diff > 0) return -1;
-        if (diff < 0) return 1;
-        return 0;
-      }).slice(0, 12);
+    recentFiles() {
+      let files = this.$site.pages
+        .filter(p => {
+          return p.path.indexOf("/posts/") >= 0;
+        })
+        .sort((a, b) => {
+          let aDate = new Date(a.frontmatter.date).getTime();
+          let bDate = new Date(b.frontmatter.date).getTime();
+          let diff = aDate - bDate;
+          if (diff > 0) return -1;
+          if (diff < 0) return 1;
+          return 0;
+        })
+        .slice(0, 12);
 
       return files;
     }
   }
-}
+};
 </script>
 
 <style lang="stylus">
 .sidebar {
   ul {
-    padding: 0.5rem;
-    margin-bottom: 10px;
+    padding: 0rem;
+    margin-bottom: 5px;
     list-style-type: none;
   }
 
@@ -73,8 +113,6 @@ export default {
   }
 
   & > .sidebar-links {
-    padding: 1.5rem 0;
-
     & > li > a.sidebar-link {
       font-size: 1.1em;
       line-height: 1.7;
@@ -95,10 +133,6 @@ export default {
       .dropdown-wrapper .nav-dropdown .dropdown-item a.router-link-active::after {
         top: calc(1rem - 2px);
       }
-    }
-
-    & > .sidebar-links {
-      padding: 1rem 0;
     }
   }
 }
@@ -189,31 +223,44 @@ export default {
   overflow: hidden;
 }
 
-.sidebar .sidebar-sub-headers
-  padding-left 1rem
-  font-size 0.95em
-a.sidebar-link
-  font-size 1em
-  font-weight 400
-  display inline-block
-  color $textColor
-  border-left 0.25rem solid transparent
-  padding 0.35rem 1rem 0.35rem 1.25rem
-  line-height 1.4
-  width: 100%
-  box-sizing: border-box
-  &:hover
-    color $accentColor
-  &.active
-    font-weight 600
-    color $accentColor
-    border-left-color $accentColor
-  .sidebar-group &
-    padding-left 2rem
-  .sidebar-sub-headers &
-    padding-top 0.25rem
-    padding-bottom 0.25rem
-    border-left none
-    &.active
-      font-weight 500
+.sidebar .sidebar-sub-headers {
+  padding-left: 1rem;
+  font-size: 0.95em;
+}
+
+a.sidebar-link {
+  font-size: 1em;
+  font-weight: 400;
+  display: inline-block;
+  color: $textColor;
+  border-left: 0.25rem solid transparent;
+  padding: 0.35rem 1rem 0.35rem 1.25rem;
+  line-height: 1.4;
+  width: 100%;
+  box-sizing: border-box;
+
+  &:hover {
+    color: $accentColor;
+  }
+
+  &.active {
+    font-weight: 600;
+    color: $accentColor;
+    border-left-color: $accentColor;
+  }
+
+  .sidebar-group & {
+    padding-left: 2rem;
+  }
+
+  .sidebar-sub-headers & {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-left: none;
+
+    &.active {
+      font-weight: 500;
+    }
+  }
+}
 </style>
