@@ -1,5 +1,5 @@
 ---
-title: "Alerting down times in Slack using Heartbeat and Kibana Watchers"
+title: "Alerting downtimes in Slack using Heartbeat and Kibana Watchers"
 date: "2020-02-02"
 ---
 

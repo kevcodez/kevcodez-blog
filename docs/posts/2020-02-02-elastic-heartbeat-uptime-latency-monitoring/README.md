@@ -5,6 +5,19 @@ date: "2020-02-02"
 
 # Monitor uptime and latency with Elastic's Heartbeat
 
+We are going to learn:
+
+- Introduction to Heartbeat
+- Basic configuration and concepts of Heartbeat
+- Running Heartbeat locally or via Docker
+- Packaging your own Dockerfile
+- Visualizing your data in Kibana
+- Alerting downtimes using Kibana Watchers and Slack
+
+This is a two-parts series, check out the second part, [alerting uptime with Kibana watchers](/posts/2020-02-02-alerting-kibana-uptime).
+
+## Introduction
+
 [Heartbeat](https://www.elastic.co/beats/heartbeat) is a lightweight shipper for uptime monitoring.
 Elastic explains it well
 
@@ -17,17 +30,7 @@ Heartbeat can easily be configured using YAML, pings your targets and sends the 
 
 Supported transfer protocols are ICMP, TCP, and HTTP. TLS, authentication and proxies are supported aswell. 
 
-On top of that, Kibana offers great visualization.
-
-We are going to learn:
-
-- Basic configuration and concepts of Heartbeat
-- Running Heartbeat locally or via Docker
-- Packaging your own Dockerfile
-- Visualizing your data in Kibana
-- Alerting downtimes using Kibana Watchers and Slack
-
-This is a two-parts series, check out the second part, [alerting uptime with Kibana watchers](/posts/2020-02-02-alerting-kibana-uptime).
+On top of that, Kibana offers great visualization and alerting.
 
 ## Configuration
 
