@@ -301,11 +301,11 @@ On top of that, alerting can be configured to alert you in case of a downtime.
 
 The main dashboard for the uptime view shows you a quick overview of your services and their status.
 
-![Uptime Dashboard](./heartbeat_1.PNG)
+![Uptime Dashboard](./heartbeat_1.png)
 
 If you select a service, you can see all the pings and the latencies for each.
 
-![Uptime Service Dashboard](./heartbeat_2.PNG)
+![Uptime Service Dashboard](./heartbeat_2.png)
 
 ### Alerting
 
