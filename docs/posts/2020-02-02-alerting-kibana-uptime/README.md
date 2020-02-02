@@ -3,7 +3,7 @@ title: "Alerting downtimes in Slack using Heartbeat and Kibana Watchers"
 date: "2020-02-02"
 ---
 
-# Monitor uptime and latency with Elastic's Heartbeat
+# Alerting downtimes in Slack using Heartbeat and Kibana Watchers
 
 This is a two parts series, check out the first part, [Elastic Heartbeat uptime and latency monitoring](/posts/2020-02-02-elastic-heartbeat-uptime-latency-monitoring).
 
@@ -15,8 +15,8 @@ In Kibana, go to Management > WatcherYou have to create an advanced watch (JSON)
 
 Our alert will do the following:
 
-Check every minute, if they have been atleast two failed pings for each service we are monitoring.
-If two pings failed for one system, we want to alert them via Slack.
+Check every minute, if atleast two failed pings occured for each service we are monitoring.
+If two pings failed for one service, we want to get an alert via Slack.
 
 First, the complete example, which we'll break down afterwards
 
