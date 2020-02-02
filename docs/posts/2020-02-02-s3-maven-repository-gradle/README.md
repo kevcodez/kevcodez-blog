@@ -8,7 +8,7 @@ date: "2020-02-02"
 At our company, we are currently setting up a new infrastructure.
 On our of big goals is to get rid of every self-managed instance.
 
-We already have dockerized application and use [ECS](https://aws.amazon.com/ecs/).
+We already have dockerized applications and use [ECS](https://aws.amazon.com/ecs/).
 Application Docker images are stored in [Amazons Elastic Container Registry](https://aws.amazon.com/ecr).
 
 Our services share a few libraries that are published to a Maven repository.
@@ -33,12 +33,12 @@ Your S3 bucket should have a private ACL, so by default, your artifacts cannot b
 
 Create atleast two different access groups:
 
-- One that is allowed to read (all your developers should have that role) to access the artifacts.
-- One that is allowed to write (your CI, in case it is used for publishing), to publish artifacts.
+- One that is allowed to read (all your developers should have that role) to access the artifacts
+- One that is allowed to write (your CI, in case it is used for publishing), to publish artifacts
 
 ## Publishing artifacts to S3
 
-AWS access keys are used to publish and retreive artifacts.
+AWS access keys are used to publish and retrieve artifacts.
 We'll start by defining the access key/secret as variables.
 
 ```groovy
@@ -53,7 +53,7 @@ buildscript {
 }
 ```
 
-This will try to get the access key/secret from environment variables.
+Gradle will first attempt to get the access key/secret from environment variables.
 If they cannot be found, it falls back to Gradles built-in [findProperty-Function](https://docs.gradle.org/current/javadoc/org/gradle/api/Project.html#findProperty-java.lang.String-).
 That function will check the project's gradle properties, global gradle properties and so on.
 
