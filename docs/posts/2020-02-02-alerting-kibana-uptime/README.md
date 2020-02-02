@@ -223,8 +223,11 @@ The condition makes sure that we have atleast two failed pings (amount of hits i
 }
 ```
 
-We use a Slack action and send a message to the `#ops` channel.
+We use a [Slack action](https://www.elastic.co/guide/en/elasticsearch/reference/current/actions-slack.html) and send a message to the `#ops` channel.
 By defining a list_path on our aggregation, the slack message will contain a list of systems that are down by their names.
+
+The `throttle_period_in_millis` defines a notification throttle in milliseconds.
+In this case we will only get a notification once every five minutes.
 
 ![Heartbeat Slack Alert](./heartbeat_alert.png)
 
