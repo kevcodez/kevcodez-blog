@@ -185,3 +185,5 @@ Person person3 = new Person.Builder("Kevin", "G").streetAddress("Adresse").stree
 As you can see, the **Java** **Builder-Pattern** has advantages over the **Constructors** and **Static Factory Methods**, if we have a lot of parameters.
 
 This post was inspired by [Effective Java - Second Edition von Joshua Bloch](https://www.amazon.de/gp/product/0321356683/ref=as_li_tl?ie=UTF8&camp=1638&creative=6742&creativeASIN=0321356683&linkCode=as2&tag=kevc01-21&linkId=SEPB46CIBCWK6MWL).
+
+If you like this post, feel free to follow me or hit me up on [Twitter](https://twitter.com/kevcodez).

@@ -68,3 +68,5 @@ SingletonClass.INSTANCE.otherMethod();
 Dieser Artikel nimmt sich Effective Java - Second Edition von Joshua Bloch als Vorbild in dem diese Vorschläge zum Java Singleton Pattern vorgeschlagen werden. Weitere Details zum Buch findet ihr unter [Effective Java - Second Edition von Joshua Bloch](/books/effective-java/).
 
 [![Effective Java - Second Edition](/effective-java.jpg "Effective Java - Second Edition")](https://www.amazon.de/gp/product/0321356683/ref=as_li_tl?ie=UTF8&camp=1638&creative=6742&creativeASIN=0321356683&linkCode=as2&tag=kevc01-21&linkId=SEPB46CIBCWK6MWL)
+
+If you like this post, feel free to follow me or hit me up on [Twitter](https://twitter.com/kevcodez).

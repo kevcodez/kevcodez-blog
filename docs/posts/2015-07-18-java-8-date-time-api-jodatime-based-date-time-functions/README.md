@@ -284,3 +284,5 @@ GregorianCalendar gregorianCalendar = GregorianCalendar.from(ZonedDateTime.no
 ## Sources
 
 As main source for this article and code samples, visit [mscharhag.com](http://www.mscharhag.com/2014/02/java-8-datetime-api.html).
+
+If you like this post, feel free to follow me or hit me up on [Twitter](https://twitter.com/kevcodez).

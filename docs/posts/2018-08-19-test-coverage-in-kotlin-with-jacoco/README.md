@@ -167,3 +167,5 @@ test.finalizedBy(jacocoTestReport)
 ```
 
 Check out the full source code on [Github](https://github.com/kevcodez/kotlin-jacoco-gradle).
+
+If you like this post, feel free to follow me or hit me up on [Twitter](https://twitter.com/kevcodez).

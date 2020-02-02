@@ -138,3 +138,5 @@ To use the JSF Regex Validator, simply define it in the XHTML.
      <f:validator validatorId="emailValidator" />
 </h:inputText>
 ```
+
+If you like this post, feel free to follow me or hit me up on [Twitter](https://twitter.com/kevcodez).

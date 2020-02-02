@@ -49,3 +49,5 @@ That's it. By using **_forClass = String.class_**, the converter will automatic
    <f:converter converterId="stringTrimmer" />
 </h:inputText>
 ```
+
+If you like this post, feel free to follow me or hit me up on [Twitter](https://twitter.com/kevcodez).

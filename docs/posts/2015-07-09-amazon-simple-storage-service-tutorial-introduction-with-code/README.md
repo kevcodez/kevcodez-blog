@@ -183,3 +183,5 @@ Enter the following policy:
 **Important:** Under Resource, you have to enter the name of your bucket.
 
 [Amazon S3 - Bucket Policy Editor](./s3_bucket_policy_editor.png)
+
+If you like this post, feel free to follow me or hit me up on [Twitter](https://twitter.com/kevcodez).

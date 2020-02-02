@@ -297,6 +297,7 @@ is replaced by **@AllArgsConstructor** on the class.
 
 * * *
 
- 
 
 For further documentation and features, please refer to the [official Project Lombok page](https://projectlombok.org/features/index.html).
+
+If you like this post, feel free to follow me or hit me up on [Twitter](https://twitter.com/kevcodez).

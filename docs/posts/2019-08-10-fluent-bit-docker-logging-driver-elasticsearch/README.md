@@ -265,3 +265,5 @@ The docker application simply uses `stdout`, the docker logging driver forwards 
 Fluent Bit forwards them to Elasticsearch.
 
 Sources from the docker-compose files and configs can be found [here](https://github.com/kevcodez/fluent-bit-docker-driver-elasticsearch).
+
+If you like this post, feel free to follow me or hit me up on [Twitter](https://twitter.com/kevcodez).

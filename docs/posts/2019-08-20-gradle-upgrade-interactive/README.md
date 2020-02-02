@@ -34,3 +34,5 @@ Now you can simply run `gradle-upgrade-interactive` in your Gradle projects.
 Package can be found on [npmjs](https://www.npmjs.com/package/gradle-upgrade-interactive).
 
 Source can be found at [Github](https://github.com/kevcodez/gradle-upgrade-interactive).
+
+If you like this post, feel free to follow me or hit me up on [Twitter](https://twitter.com/kevcodez).

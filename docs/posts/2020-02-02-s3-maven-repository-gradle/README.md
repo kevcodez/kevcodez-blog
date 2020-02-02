@@ -5,8 +5,8 @@ date: "2020-02-02"
 
 # Using an AWS S3 Bucket as your Maven repository in a Gradle project
 
-At our company, we are currently setting up a new infrastructure.
-On our of big goals is to get rid of every self-managed instance.
+At our company, we are currently redoing our entire application infrastructure.
+One of our big goals is to get rid of every self-managed instance.
 
 We already have dockerized applications and use [ECS](https://aws.amazon.com/ecs/).
 Application Docker images are stored in [Amazons Elastic Container Registry](https://aws.amazon.com/ecr).
@@ -20,7 +20,7 @@ All of our Kotlin-based services use Gradle as a build tool.
 
 We were looking into a solution that meets the following requirements:
 
-* No self-managed instance, that we need to host/manage
+* No self-managed instance, that we need to host/maintain
 * Cost-effective
 * Ability to privately access the artifacts, since they are not meant for the public
 * Support for Gradle

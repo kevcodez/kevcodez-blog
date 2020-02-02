@@ -108,3 +108,5 @@ A sample usage of our RequiredCheckboxValidator:
 When submitting the form, i.e. by pressing a button, the form is validated. If the checkbox is not checked, the **RequiredCheckboxValidator** will throw a _ValidatorException_. The _doRegistration()_ won't be invoked. All possible values of the selectBooleanCheckbox can be found here - [Tutorialspoint - selectBooleanCheckbox](https://www.tutorialspoint.com/jsf/jsf_selectbooleancheckbox_tag.htm).
 
 The FacesValidator is reusable.
+
+If you like this post, feel free to follow me or hit me up on [Twitter](https://twitter.com/kevcodez).
