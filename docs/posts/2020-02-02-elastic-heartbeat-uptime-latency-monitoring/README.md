@@ -19,14 +19,15 @@ Supported transfer protocols are ICMP, TCP, and HTTP. TLS, authentication and pr
 
 On top of that, Kibana offers great visualization.
 
-What are we going to learn:
+We are going to learn:
 
 - Basic configuration and concepts of Heartbeat
 - Running Heartbeat locally or via Docker
 - Packaging your own Dockerfile
 - Visualizing your data in Kibana
+- Alerting downtimes using Kibana Watchers and Slack
 
-Check out the second part, [alerting uptime with Kibana watchers](/posts/2020-02-02-alerting-kibana-uptime).
+This is a two-parts series, check out the second part, [alerting uptime with Kibana watchers](/posts/2020-02-02-alerting-kibana-uptime).
 
 ## Configuration
 

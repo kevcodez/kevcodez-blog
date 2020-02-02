@@ -5,11 +5,13 @@ date: "2020-02-02"
 
 # Monitor uptime and latency with Elastic's Heartbeat
 
-Check out the first part, [Elastic Heartbeat uptime and latency monitoring](/posts/2020-02-02-elastic-heartbeat-uptime-latency-monitoring).
+This is a two parts series, check out the first part, [Elastic Heartbeat uptime and latency monitoring](/posts/2020-02-02-elastic-heartbeat-uptime-latency-monitoring).
 
 To setup an alerting, we can use [Kibana's Watcher](https://www.elastic.co/guide/en/kibana/current/watcher-ui.html).
 
-You have to create an advanced watch (JSON) to do this.
+In Kibana, go to Management > WatcherYou have to create an advanced watch (JSON) to do this.
+
+![Kibana create Watcher](./kibana_watcher.png)
 
 Our alert will do the following:
 
