@@ -23,6 +23,12 @@ module.exports = {
     }]
   },
   plugins: [
+    [
+      'feed', {
+        canonical_base: 'https://kevcodez.de',
+        posts_directories: ['/posts/', '/books/']
+      }
+    ],
     ['@vuepress/medium-zoom', {
       selector: 'img',
     }],
