@@ -23,6 +23,9 @@ module.exports = {
     }]
   },
   plugins: [
+    ['@vuepress/medium-zoom', {
+      selector: 'img',
+    }],
     ['@vuepress/pwa',
       {
         serviceWorker: true,
