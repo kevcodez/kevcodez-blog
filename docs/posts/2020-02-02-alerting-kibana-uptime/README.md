@@ -1,15 +1,16 @@
 ---
-title: "Alerting downtimes in Slack using Heartbeat and Kibana Watchers"
+title: "Alerting downtimes in Slack using Heartbeat and KiElasticsearchbana Watchers"
 date: "2020-02-02"
 ---
 
-# Alerting downtimes in Slack using Heartbeat and Kibana Watchers
+# Alerting downtimes in Slack using Heartbeat and Elasticsearch Watchers
 
 This is a two parts series, check out the first part, [Elastic Heartbeat uptime and latency monitoring](/posts/2020-02-02-elastic-heartbeat-uptime-latency-monitoring).
 
-To setup an alerting, we can use [Kibana's Watcher](https://www.elastic.co/guide/en/kibana/current/watcher-ui.html).
+To setup an alerting, we can use an [Elasticsearch Watcher](https://www.elastic.co/guide/en/kibana/current/watcher-ui.html).
 
-In Kibana, go to Management > WatcherYou have to create an advanced watch (JSON) to do this.
+In Kibana, go to Management > Elasticsearch > Watcher.
+You have to create an advanced watch (JSON) to do this.
 
 ![Kibana create Watcher](./kibana_watcher.png)
 
