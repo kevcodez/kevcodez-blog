@@ -21,9 +21,10 @@ Since there are many good articles about OAuth/AWS Cognito Setup out there, I am
 Let's quickly initialize a new project using the great [Spring Initializr](https://start.spring.io/).
 
 Again, we only want to *verify* the tokens sent to our application and make sure the user is authanticated and has the proper roles to execute function.
+
 We do *not* want to create custom login pages or anything similar in this tutorial.
 
-![alt text](./spring_init.PNG)
+![alt text](./spring_init.png)
 
 We need the following modules:
 
@@ -47,7 +48,7 @@ class TestController {
 }
 ```
 
-Let's configure everything, so we can actually verify tokens and make sure the user is authenticated.
+Let's configure spring, so we can actually verify tokens and make sure the user is authenticated.
 
 ```yml
 spring:
@@ -60,12 +61,10 @@ spring:
 
 You can find your cognito pool id under **General Settings > Pool Id**.
 
-If not configured otherwise, every endpoint is secured.
-
 That's it.
 Crazy right?
 
-AWS Cognito provides informations about endpoints and public certificates under the URL `https://cognito-idp.<aws-region>.amazonaws.com/<pool-id>/.well-known/openid-configuration#`.
+AWS Cognito provides informations about endpoints and public certificates under the URL `https://cognito-idp.*aws-region*.amazonaws.com/*pool-id*/.well-known/openid-configuration#`.
 
 ```json
 {

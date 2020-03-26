@@ -77,7 +77,7 @@ export default {
           let diff = aDate - bDate;
           if (diff > 0) return -1;
           if (diff < 0) return 1;
-          return 0;
+          return a.frontmatter.title.localeCompare(b.frontmatter.title);
         })
         .slice(0, 12);
 
