@@ -1,9 +1,9 @@
 ---
-title: "Secure your Spring Boot App with OAuth 2.0 provided by AWS Cognito"
+title: "Secure your Spring Boot App with Json Web Tokens and OAuth 2.0 provided by AWS Cognito"
 date: "2020-04-26"
 ---
 
-# Secure your Spring Boot App with OAuth 2.0 provided by AWS Cognito
+# Secure your Spring Boot App with Json Web Tokens and OAuth 2.0 provided by AWS Cognito
 
 Personally, I hate this topic.
 I do it every few years and by then I have forgotten everything I knew about [OAuth](https://www.oauth.com/) flows and the confusion begins again.
