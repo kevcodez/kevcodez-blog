@@ -1,6 +1,6 @@
 ---
 title: "Getting started with AWS Cognito"
-date: "2020-04-26"
+date: "2020-03-26"
 ---
 
 # Getting started with AWS Cognito

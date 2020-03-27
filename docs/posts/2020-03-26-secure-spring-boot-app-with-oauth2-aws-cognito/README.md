@@ -1,6 +1,6 @@
 ---
 title: "Secure your Spring Boot App with Json Web Tokens and OAuth 2.0 provided by AWS Cognito"
-date: "2020-04-26"
+date: "2020-03-26"
 ---
 
 # Secure your Spring Boot App with Json Web Tokens and OAuth 2.0 provided by AWS Cognito
