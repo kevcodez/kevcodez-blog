@@ -46,6 +46,7 @@ For simplicity, the [openid-client](https://www.npmjs.com/package/openid-client)
 It could be any other OAuth client library, though.
 
 ```ts
+// Initiliaze issuer configuration, discover or configure manually
 const issuer = await Issuer.discover('https://cognito-idp.eu-central-1.amazonaws.com/eu-central-1_xyz/.well-known/openid-configuration')
 
 
@@ -57,10 +58,11 @@ const client = new issuer.Client({
     token_endpoint_auth_method: 'none'
 });
 
+// Generate code challenge
 const code_verifier = generators.codeVerifier();
-
 const code_challenge = generators.codeChallenge(code_verifier);
 
+// Generate authorization url, that we will open for the user
 const authorizationUrl = await client.authorizationUrl({
     scope: 'openid',
     code_challenge,
@@ -83,13 +85,15 @@ let params
 
 // Very simple webserver, using Nodes standard http module
 const server = http.createServer((req, res) => {
+    // In here when the server gets a request
     if (req.url.startsWith('/?')) {
+        // The parameters could be parsed manually, but the openid-client offers a function for it
         params = client.callbackParams(req);
         res.end('You can close this browser now.')
     } else {
         res.end('Unsupported')
     }
-}).listen(6363)
+}).listen(6363) // static local port
 
 // Open authorization url in preferred browser, works cross-platform
 opn(authorizationUrl)
@@ -102,13 +106,15 @@ while (params === undefined) {
 ```
 
 We are now waiting for the user to login.
+On a successful login, the user will be redirected to `http://localhost:6363/?code=<dynamic-code>`.
 
 ## Get token set
 
 ```ts
+// Receive token set given the redirect parameters and the code verifier we created earlier
 const tokenSet = await client.oauthCallback('http://localhost:6363', params, { code_verifier })
 
-// we don't need the webserver anymore, stop listening
+// we don't need the server anymore, stop listening
 server.close()
 
 console.log(tokenSet)
