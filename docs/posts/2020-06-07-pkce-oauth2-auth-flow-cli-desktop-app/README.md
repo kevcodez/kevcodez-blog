@@ -42,7 +42,7 @@ Let's get into it.
 
 ## Client initialization and code generation
 
-For simplicity, the [openid-client|https://www.npmjs.com/package/openid-client] package is used.
+For simplicity, the [openid-client](https://www.npmjs.com/package/openid-client) package is used.
 It could be any other OAuth client library, though.
 
 ```ts
@@ -76,7 +76,7 @@ This allows for auto-configuration and any changes on the provider side won't ne
 
 ## Launch a simple webserver and open browser
 
-The [opn|npmjs.com/package/opn] package is used for cross-platform website opening.
+The [opn](npmjs.com/package/opn) package is used for cross-platform website opening.
 
 ```ts
 let params
