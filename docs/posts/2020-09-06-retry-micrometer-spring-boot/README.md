@@ -1,6 +1,6 @@
 ---
 title: "Retry sending metrics to Micrometer in Spring Boot on failure"
-date: "2019-09-06"
+date: "2020-09-06"
 ---
 
 # Retry sending metrics to Micrometer in Spring Boot on failure
