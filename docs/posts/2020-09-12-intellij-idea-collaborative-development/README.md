@@ -5,11 +5,11 @@ date: "2020-09-12"
 
 # Collaborative development in IntelliJ IDEA
 
-On the 5th of february 2005, Maxim Sharifov created the ticket ["Collaborative development"](https://youtrack.jetbrains.com/issue/IDEABKL-708) on the JetBrains issue tracker. This issue has become the top voted issue in the entire issue tracker with > 2180 votes.
+On the 5th of february 2005, Maxim Sharifov created the ticket ["Collaborative development"](https://youtrack.jetbrains.com/issue/IDEABKL-708) on the JetBrains issue tracker. This issue has become the top voted issue in the entire issue tracker with **over 2180 votes**.
 
 With pair programming and remote programming becoming more and more common (especially during a global pandemic), the need for a proper tool has risen immensly.
 
-[Hadi Hariri](https://twitter.com/hhariri), developer advocat at JetBrains, has already dropped some hints in march 2020 that they have been working on such feature.
+[Hadi Hariri](https://twitter.com/hhariri), developer advocate at JetBrains, has already dropped some hints in march 2020 that they have been working on such feature.
 
 > Thanks for your comments. We've been working on this feature for some time and as I mentioned we should be able to show something relatively soon. We have a team of people on it. It is of priority for us.
 
