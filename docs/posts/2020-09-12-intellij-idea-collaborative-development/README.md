@@ -11,7 +11,7 @@ With pair programming and remote programming becoming more and more common (espe
 
 [Hadi Hariri](https://twitter.com/hhariri), developer advocate at JetBrains, has already dropped some hints in march 2020 that they have been working on such feature.
 
-> Thanks for your comments. We've been working on this feature for some time and as I mentioned we should be able to show something relatively soon. We have a team of people on it. It is of priority for us.
+![Announcement of Hadi Hariri for active development of collaborative development feature](./hariri.png)
 
 [VSCode](https://code.visualstudio.com/) has introduced [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) end of 2017 and has received much love.
 
@@ -45,7 +45,7 @@ The plugin is neatly integrated in IntelliJ itself.
 
 ## **How do I get it?**
 
-Fill out the [survey from JetBrains](https://surveys.jetbrains.com/s3/code-with-me) and you will be redirected to a Google Drive containing the plugin as zip. You have to install the plugin from disk by going to your plugins in IDEA and select "todo"
+Fill out the [survey from JetBrains](https://surveys.jetbrains.com/s3/code-with-me) and you will be redirected to a Google Drive containing the plugin as zip. You have to install the plugin from disk by going to your plugins in IDEA and select "Install plugin from disk".
 
 Also check out the official [FAQ](https://www.jetbrains.com/help/idea/faq-about-code-with-me.html).
 
