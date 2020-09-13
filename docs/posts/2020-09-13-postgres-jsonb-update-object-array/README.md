@@ -3,7 +3,7 @@ title: "Postgres JSONB: Updating data inside an array of objects"
 date: "2020-09-13"
 ---
 
-# Postgres JSONB: Updating data inside an aray of objects
+# Postgres JSONB: Updating data inside an array of objects
 
 Recently I had the challenge to update data inside of an array of objects within a JSONB column.
 
