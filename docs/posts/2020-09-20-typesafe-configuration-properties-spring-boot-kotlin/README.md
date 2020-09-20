@@ -1,6 +1,6 @@
 ---
 title: "Type-safe configuration properties and autocomplete in Spring Boot + Kotlin"
-date: "2020-09-13"
+date: "2020-09-20"
 ---
 
 # Type-safe configuration properties and autocomplete in Spring Boot + Kotlin
@@ -17,8 +17,9 @@ my.ftp:
     port: 22
 ```
 
-You could have multiple files like application-default.yml, application-dev.yml, application-prod.yml.
+You may have multiple files like application-default.yml, application-dev.yml, application-prod.yml.
 The only thing you need to do is set your active profile (i.e. "prod") and Spring will automatically use that profile.
+This can be done by setting SPRING_PROFILES_ACTIVE environment variable.
 You can also define default properties in your application.yml (no profile suffix).
 
 ## Disadvantages of using `@Value`
@@ -85,6 +86,8 @@ class MyApplication {
 }
 ```
 
+Alternatively, you can use `@ConfigurationPropertiesScan`.
+
 ## Auto complete in IntelliJ
 
 To get autocompletion in your application files in IntelliJ IDEA, you have to use [KAPT - Kotlin Annotation Processing](https://kotlinlang.org/docs/reference/kapt.html).
@@ -92,7 +95,6 @@ To get autocompletion in your application files in IntelliJ IDEA, you have to us
 
 ```groovy
 apply plugin: 'kotlin-kapt'
-
 
 dependencies {
     // ...
