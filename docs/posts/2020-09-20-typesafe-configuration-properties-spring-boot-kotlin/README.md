@@ -1,9 +1,9 @@
 ---
-title: "Type-safe Spring Boot configuration properties with Kotlin data classes and autocomplete"
+title: "Type-safe Spring Boot configuration properties with autocomplete using Kotlin data classes"
 date: "2020-09-20"
 ---
 
-# Type-safe Spring Boot configuration properties with Kotlin data classes and autocomplete
+# Type-safe Spring Boot configuration properties with autocomplete using Kotlin data classes
 
 Spring Boot allows configuring properties for multiple environments using application properties or yml files.
 
