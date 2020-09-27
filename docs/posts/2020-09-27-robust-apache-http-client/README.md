@@ -1,9 +1,9 @@
 ---
-title: "More robust HTTP calls with Apache HttpRequestRetryHandler using RetryHandler and ServiceNotAvailableStrategy"
+title: "Resilient HTTP client with Apache HttpRequestRetryHandler using RetryHandler and ServiceNotAvailableStrategy"
 date: "2020-09-27"
 ---
 
-# More robust HTTP calls with Apache HttpClient using HttpRequestRetryHandler and ServiceNotAvailableStrategy
+# Resilient HTTP client with Apache HttpClient using HttpRequestRetryHandler and ServiceNotAvailableStrategy
 
 When using HTTP calls you eventually run into issues such as:
 
