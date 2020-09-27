@@ -5,7 +5,7 @@ date: "2020-09-27"
 
 # More robust HTTP calls with Apache HttpClient using HttpRequestRetryHandler and ServiceNotAvailableStrategy
 
-When using HTTP calls you eventually run into possible issues:
+When using HTTP calls you eventually run into issues such as:
 
 * Connect Timeouts
 * Socket Timeouts
@@ -17,7 +17,7 @@ When using HTTP calls you eventually run into possible issues:
 * ...
 
 In most of these cases, a simple retry will help.
-To retry calls on errors, we can make use of the built-in `HttpRequestRetryHandler` and the 
+To retry HTTP calls on errors, we can make use of the built-in `HttpRequestRetryHandler` and the 
 `ServiceUnavailableRetryStrategy`.
 
 Let's set up a simple closeable HTTP client first:
@@ -102,4 +102,5 @@ HttpClientBuilder
     .build()
 ```
 
-When using both, the HTTP request retry handler and the service unavailable retry strategy, you will have a lot more robust HTTP client as small network/service hickups will not lead to failure.
+When using both, the HTTP request retry handler and the service unavailable retry strategy, your HTTP client will be a lot more robust.
+Small network/service hickups will not lead to failure.
