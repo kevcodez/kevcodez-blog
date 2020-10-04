@@ -108,8 +108,6 @@ Each member of the business team has his/her area or specialization.
 Let's take risk prevention as an example.
 One member of the business team is responsible for risk prevention.
 That means, handling any daily operations that relate to that topic, monitoring key performance indicators and working with the development team to try and improve the area.
-As we are a rather small development team, we can't just implement any idea.
-We need to carefully examine the idea and prioritize.
 
 Developers are free to participate in business topics and evaluate ideas with the business team.
 
@@ -122,17 +120,8 @@ After I started, over the course of two years, three old colleagues followed me.
 Another team member also brought an old colleague.
 I'd say the average age of the development team is roughly 31.
 
-Every member of the development team is involved in planning changes to the business, implementing, testing and operating. We try our best to avoid knowledge silos.
-
-We host everything in the cloud (mainly AWS) and make use of services provided by the cloud provider.
-This enables us to concentrate on business logic and our own applications rather than networking, scaling, load balancing and such.
-We are still in control of all of that and are free to do changes, but it gives us a lot of freedom to be able to use such services.
-
-When working in an agile product development, it is important to keep external dependencies as low as possible to avoid barriers.
-On the other hand, you cannot do _everything_ yourself.
-You need to outsource some things.
-The difficult thing is to balance that.
-A future part of this series will handle that topic in more depth.
+Every member of the development team is involved in planning changes to the business, implementing, testing and operating.
+We try our best to avoid knowledge silos.
 
 On a side note, we have been working 100% remotely for the past 6 months due to the global pandemic.
 
