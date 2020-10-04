@@ -2,17 +2,41 @@ module.exports = {
   title: "kevcodez - Developer Blog",
   description:
     "Developer Blog - Java, Kotlin, Spring, Postgres, DevOps, Dev stuff",
+  evergreen: true,
+  head: [
+    [
+      "meta",
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1",
+      },
+    ],
+    ["meta", { name: "theme-color", content: "#5a67d8" }],
+    ["link", { rel: "icon", href: "/code.svg" }],
+    ["link", { rel: "manifest", href: "/manifest.json" }],
+    ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
+    [
+      "meta",
+      { name: "apple-mobile-web-app-status-bar-style", content: "black" },
+    ],
+    ["link", { rel: "apple-touch-icon", href: "/code@2x.png" }],
+    [
+      "meta",
+      {
+        name: "msapplication-TileImage",
+        content: "/code@2x.png",
+      },
+    ],
+  ],
   themeConfig: {
     nav: [
       {
         text: "Twitter",
         link: "https://twitter.com/kevcodez",
-        target: "_blank",
       },
       {
         text: "Github",
         link: "https://github.com/kevcodez",
-        target: "_blank",
       },
     ],
     repo: "kevcodez/kevcodez-blog",

@@ -1,0 +1,37 @@
+{
+  "name": "Kevcodez - Developer Blog",
+  "short_name": "Kevcodez",
+  "description": "A personal developer blog.",
+  "display": "standalone",
+  "scope": "/app/",
+  "background_color": "#FFFFFF",
+  "theme_color": "#5a67d8",
+  "icons": [
+    {
+      "src": "code.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "code.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "code.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "code@2x.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "code.svg",
+      "sizes": "196x196",
+      "type": "image/svg",
+      "purpose": "any maskable"
+    }
+  ]
+}

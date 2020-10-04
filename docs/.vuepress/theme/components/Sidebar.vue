@@ -14,6 +14,7 @@
               style="display: flex"
               href="https://twitter.com/kevcodez"
               target="_blank"
+              rel="noopener"
             >
               <div
                 style="height: 32px; width: 32px; margin-right: 0.5em; display: flex; justify-content: center; align-items: center"
@@ -21,6 +22,7 @@
                 <img
                   src="/Twitter_Logo_Blue.png"
                   style="height: 32px; width; 32px;"
+                  alt="Twitter Kevcodez"
                 />
               </div>
 
@@ -33,6 +35,7 @@
               style="display: flex"
               href="https://github.com/kevcodez"
               target="_blank"
+              rel="noopener"
             >
               <div
                 style="height: 32px; width: 32px;margin-right: 0.5em;  display: flex; justify-content: center; align-items: center"
@@ -40,6 +43,7 @@
                 <img
                   src="/GitHub-Mark-64px.png"
                   style="height: 25px; width; 25px; "
+                  alt="Github Kevcodez"
                 />
               </div>
 
