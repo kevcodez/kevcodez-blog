@@ -1,6 +1,7 @@
 ---
 title: "Inside Agile Product Development Series"
 date: "2020-10-04"
+sidebar: false
 ---
 
 # Inside Agile Product Development Series

@@ -1,12 +1,8 @@
 <template>
   <div>
-
     <h2>Featured posts</h2>
 
-    <div
-      class="features"
-      v-if="data.features && data.features.length"
-    >
+    <div class="features" v-if="data.features && data.features.length">
       <div
         class="feature"
         v-for="(feature, index) in data.features"
@@ -24,12 +20,11 @@
 <script>
 export default {
   computed: {
-    data () {
-      return this.$page.frontmatter
+    data() {
+      return this.$page.frontmatter;
     },
-
-  }
-}
+  },
+};
 </script>
 
 <style lang="scss">
@@ -43,8 +38,8 @@ export default {
 
 .feature {
   flex-grow: 1;
-  flex-basis: 30%;
-  max-width: 30%;
+  flex-basis: 45%;
+  max-width: 45%;
 
   .feature-title {
     font-size: 1.4rem;

@@ -2,19 +2,17 @@
   <div class="agile-product-development">
     <h2>Inside Agile Product Development Series</h2>
 
-    <div class="description">
-      <p>
-        The <strong>inside agile product development series</strong> gives you
-        an overview of how we work as an agile software development team to
-        continuously develop &amp; ship a product. It covers a variety of
-        different, also non-technical, topics. The good, the bad and the ugly.
-      </p>
+    <p>
+      The <strong>inside agile product development series</strong> gives you an
+      overview of how we work as an agile software development team to
+      continuously develop &amp; ship a product. It covers a variety of
+      different, also non-technical, topics. The good, the bad and the ugly.
+    </p>
 
-      <div class="cta">
-        <a href="/posts/2020-10-04-inside-agile-product-development-series"
-          >→ Read the introduction</a
-        >
-      </div>
+    <div class="cta">
+      <a href="/posts/2020-10-04-inside-agile-product-development-series"
+        >→ Read the introduction</a
+      >
     </div>
   </div>
 </template>
@@ -31,25 +29,6 @@ export default {};
     border-bottom: none;
     font-weight: bold;
     font-size: 2rem;
-  }
-
-  .description {
-    display: flex;
-    justify-content: center;
-
-    p {
-      max-width: 500px;
-      align-self: center;
-      margin-right: 40px;
-    }
-
-    @media (max-width: 1200px) {
-      flex-direction: column;
-
-      p {
-        margin-right: 0px;
-      }
-    }
   }
 
   .cta {

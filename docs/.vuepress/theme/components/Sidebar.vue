@@ -18,7 +18,10 @@
               <div
                 style="height: 32px; width: 32px; margin-right: 0.5em; display: flex; justify-content: center; align-items: center"
               >
-                <img src="/Twitter_Logo_Blue.png" style="height: 32px; width; 32px;" />
+                <img
+                  src="/Twitter_Logo_Blue.png"
+                  style="height: 32px; width; 32px;"
+                />
               </div>
 
               <span style="align-self: center">kevcodez</span>
@@ -34,7 +37,10 @@
               <div
                 style="height: 32px; width: 32px;margin-right: 0.5em;  display: flex; justify-content: center; align-items: center"
               >
-                <img src="/GitHub-Mark-64px.png" style="height: 25px; width; 25px; " />
+                <img
+                  src="/GitHub-Mark-64px.png"
+                  style="height: 25px; width; 25px; "
+                />
               </div>
 
               <span style="align-self: center">kevcodez</span>
@@ -50,7 +56,7 @@
         </section>
         <ul class="sidebar-sub-headers">
           <li class="sidebar-sub-header" v-for="post in recentFiles">
-            <a class="sidebar-link" :href="post.path">{{post.title}}</a>
+            <a class="sidebar-link" :href="post.path">{{ post.title }}</a>
           </li>
         </ul>
       </li>
@@ -68,7 +74,7 @@ export default {
   computed: {
     recentFiles() {
       let files = this.$site.pages
-        .filter(p => {
+        .filter((p) => {
           return p.path.indexOf("/posts/") >= 0;
         })
         .sort((a, b) => {
@@ -82,8 +88,8 @@ export default {
         .slice(0, 12);
 
       return files;
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -5,54 +5,30 @@
     <Content class="theme-default-content custom" />
 
     <footer class="page-edit">
-      <div
-        class="edit-link"
-        v-if="editLink"
-      >
-        <a
-          :href="editLink"
-          target="_blank"
-          rel="noopener noreferrer"
-        >{{ editLinkText }}</a>
+      <div class="edit-link" v-if="editLink">
+        <a :href="editLink" target="_blank" rel="noopener noreferrer">{{
+          editLinkText
+        }}</a>
         <OutboundLink />
       </div>
 
-      <div
-        class="last-updated"
-        v-if="lastUpdated"
-      >
+      <div class="last-updated" v-if="lastUpdated">
         <span class="prefix">{{ lastUpdatedText }}: </span>
         <span class="time">{{ lastUpdated }}</span>
       </div>
     </footer>
 
-    <div
-      class="page-nav"
-      v-if="prev || next"
-    >
+    <div class="page-nav" v-if="prev || next">
       <p class="inner">
-        <span
-          v-if="prev"
-          class="prev"
-        >
+        <span v-if="prev" class="prev">
           ←
-          <router-link
-            v-if="prev"
-            class="prev"
-            :to="prev.path"
-          >
+          <router-link v-if="prev" class="prev" :to="prev.path">
             {{ prev.title || prev.path }}
           </router-link>
         </span>
 
-        <span
-          v-if="next"
-          class="next"
-        >
-          <router-link
-            v-if="next"
-            :to="next.path"
-          >
+        <span v-if="next" class="next">
+          <router-link v-if="next" :to="next.path">
             {{ next.title || next.path }}
           </router-link>
           →
@@ -65,132 +41,144 @@
 </template>
 
 <script>
-import { resolvePage, outboundRE, endingSlashRE } from '@vuepress/theme-default/util'
+import {
+  resolvePage,
+  outboundRE,
+  endingSlashRE,
+} from "@vuepress/theme-default/util";
 export default {
-  props: ['sidebarItems'],
+  props: ["sidebarItems"],
   computed: {
-    lastUpdated () {
-      return this.$page.lastUpdated
+    lastUpdated() {
+      return this.$page.lastUpdated;
     },
-    lastUpdatedText () {
-      if (typeof this.$themeLocaleConfig.lastUpdated === 'string') {
-        return this.$themeLocaleConfig.lastUpdated
+    lastUpdatedText() {
+      if (typeof this.$themeLocaleConfig.lastUpdated === "string") {
+        return this.$themeLocaleConfig.lastUpdated;
       }
-      if (typeof this.$site.themeConfig.lastUpdated === 'string') {
-        return this.$site.themeConfig.lastUpdated
+      if (typeof this.$site.themeConfig.lastUpdated === "string") {
+        return this.$site.themeConfig.lastUpdated;
       }
-      return 'Last Updated'
+      return "Last Updated";
     },
-    sortedFiles () {
-      let files = this.$site.pages.filter(it => it.path !== '/').sort((a, b) => {
-        return new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()
-      })
+    sortedFiles() {
+      let files = this.$site.pages
+        .filter((it) => it.path !== "/")
+        .sort((a, b) => {
+          return (
+            new Date(b.frontmatter.date).getTime() -
+            new Date(a.frontmatter.date).getTime()
+          );
+        });
 
-      return files
+      return files;
     },
-    indexOfCurrentPage () {
+    indexOfCurrentPage() {
       const sortedFiles = this.sortedFiles;
       for (var i = 0; i < this.sortedFiles.length; i++) {
-        if (this.sortedFiles[i].regularPath === this.$route.path)
-          return i;
+        if (this.sortedFiles[i].regularPath === this.$route.path) return i;
       }
 
       return -1;
     },
-    prev () {
+    prev() {
       const sortedFiles = this.sortedFiles;
 
-      const prevIndex = this.indexOfCurrentPage - 1
+      const prevIndex = this.indexOfCurrentPage - 1;
       if (prevIndex > -1) {
-        return this.sortedFiles[prevIndex]
+        return this.sortedFiles[prevIndex];
       } else {
-        return null
+        return null;
       }
     },
-    next () {
+    next() {
       const sortedFiles = this.sortedFiles;
 
-      const nextIndex = this.indexOfCurrentPage + 1
+      const nextIndex = this.indexOfCurrentPage + 1;
       if (nextIndex < sortedFiles.length) {
-        return this.sortedFiles[nextIndex]
+        return this.sortedFiles[nextIndex];
       } else {
-        return null
+        return null;
       }
     },
-    editLink () {
+    editLink() {
       if (this.$page.frontmatter.editLink === false) {
-        return
+        return;
       }
       const {
         repo,
         editLinks,
-        docsDir = '',
-        docsBranch = 'master',
-        docsRepo = repo
-      } = this.$site.themeConfig
+        docsDir = "",
+        docsBranch = "master",
+        docsRepo = repo,
+      } = this.$site.themeConfig;
       if (docsRepo && editLinks && this.$page.relativePath) {
-        return this.createEditLink(repo, docsRepo, docsDir, docsBranch, this.$page.relativePath)
+        return this.createEditLink(
+          repo,
+          docsRepo,
+          docsDir,
+          docsBranch,
+          this.$page.relativePath
+        );
       }
     },
-    editLinkText () {
+    editLinkText() {
       return (
-        this.$themeLocaleConfig.editLinkText
-        || this.$site.themeConfig.editLinkText
-        || `Edit this page`
-      )
-    }
+        this.$themeLocaleConfig.editLinkText ||
+        this.$site.themeConfig.editLinkText ||
+        `Edit this page`
+      );
+    },
   },
   methods: {
-    createEditLink (repo, docsRepo, docsDir, docsBranch, path) {
-      const bitbucket = /bitbucket.org/
+    createEditLink(repo, docsRepo, docsDir, docsBranch, path) {
+      const bitbucket = /bitbucket.org/;
       if (bitbucket.test(repo)) {
-        const base = outboundRE.test(docsRepo)
-          ? docsRepo
-          : repo
+        const base = outboundRE.test(docsRepo) ? docsRepo : repo;
         return (
-          base.replace(endingSlashRE, '')
-          + `/src`
-          + `/${docsBranch}/`
-          + (docsDir ? docsDir.replace(endingSlashRE, '') + '/' : '')
-          + path
-          + `?mode=edit&spa=0&at=${docsBranch}&fileviewer=file-view-default`
-        )
+          base.replace(endingSlashRE, "") +
+          `/src` +
+          `/${docsBranch}/` +
+          (docsDir ? docsDir.replace(endingSlashRE, "") + "/" : "") +
+          path +
+          `?mode=edit&spa=0&at=${docsBranch}&fileviewer=file-view-default`
+        );
       }
       const base = outboundRE.test(docsRepo)
         ? docsRepo
-        : `https://github.com/${docsRepo}`
+        : `https://github.com/${docsRepo}`;
       return (
-        base.replace(endingSlashRE, '')
-        + `/edit`
-        + `/${docsBranch}/`
-        + (docsDir ? docsDir.replace(endingSlashRE, '') + '/' : '')
-        + path
-      )
-    }
-  }
+        base.replace(endingSlashRE, "") +
+        `/edit` +
+        `/${docsBranch}/` +
+        (docsDir ? docsDir.replace(endingSlashRE, "") + "/" : "") +
+        path
+      );
+    },
+  },
+};
+function resolvePrev(page, items) {
+  return find(page, items, -1);
 }
-function resolvePrev (page, items) {
-  return find(page, items, -1)
+function resolveNext(page, items) {
+  return find(page, items, 1);
 }
-function resolveNext (page, items) {
-  return find(page, items, 1)
-}
-function find (page, items, offset) {
-  const res = []
-  flatten(items, res)
+function find(page, items, offset) {
+  const res = [];
+  flatten(items, res);
   for (let i = 0; i < res.length; i++) {
-    const cur = res[i]
-    if (cur.type === 'page' && cur.path === decodeURIComponent(page.path)) {
-      return res[i + offset]
+    const cur = res[i];
+    if (cur.type === "page" && cur.path === decodeURIComponent(page.path)) {
+      return res[i + offset];
     }
   }
 }
-function flatten (items, res) {
+function flatten(items, res) {
   for (let i = 0, l = items.length; i < l; i++) {
-    if (items[i].type === 'group') {
-      flatten(items[i].children || [], res)
+    if (items[i].type === "group") {
+      flatten(items[i].children || [], res);
     } else {
-      res.push(items[i])
+      res.push(items[i]);
     }
   }
 }
@@ -200,7 +188,7 @@ function flatten (items, res) {
 @require './wrapper.styl';
 
 div.custom {
-  max-width: 1400px;
+  max-width: 900px;
   margin: 3rem auto !important;
   padding: 2rem 2.5rem !important;
 }
@@ -208,6 +196,7 @@ div.custom {
 .page {
   padding-bottom: 2rem;
   display: block;
+  font-size: 20px;
 }
 
 .page-edit {
