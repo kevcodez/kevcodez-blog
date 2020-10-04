@@ -5,10 +5,14 @@
       <div class="post" v-for="post in posts">
         <router-link :to="post.path">
           <div>
-            <img v-if="post.frontmatter.image" :src="$withBase(post.frontmatter.image)" alt />
+            <img
+              v-if="post.frontmatter.image"
+              :src="$withBase(post.frontmatter.image)"
+              alt
+            />
           </div>
-          <h3>{{post.title}}</h3>
-          <p>{{post.description}}</p>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.description }}</p>
         </router-link>
       </div>
     </div>
@@ -20,7 +24,7 @@ export default {
   computed: {
     posts() {
       let files = this.$site.pages
-        .filter(it => it.path !== "/")
+        .filter((it) => it.path !== "/")
         .sort((a, b) => {
           let aDate = new Date(a.frontmatter.date).getTime();
           let bDate = new Date(b.frontmatter.date).getTime();
@@ -29,10 +33,10 @@ export default {
           if (diff < 0) return 1;
           return a.frontmatter.title.localeCompare(b.frontmatter.title);
         })
-        .slice(0, 15);
+        .slice(0, 10);
 
       return files;
-    }
-  }
+    },
+  },
 };
 </script>

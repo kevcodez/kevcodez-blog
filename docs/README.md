@@ -12,6 +12,8 @@ features:
     url: /posts/2019-10-12-responsive-emails-vuejs-mjml/
 ---
 
+<AgileProductDevelopment />
+
 <Features />
 
 <RecentArticles />
