@@ -86,7 +86,6 @@ As you might guess, there's quite a bit of business logic to cover here:
 - Product information management (product data, prices, media, search, ...)
 - CRM (contract management, exchanges, ...)
 - Payment (invoices, monthly billing, dunning, debt collection, ...)
-- Contracts (cancellation, withdrawal)
 - Risk prevention
 - Supply chain (procurement of goods, warehouse, order fulfillment, ...)
 - Online Shop & Compliance (GDPR, consent management, ...)
@@ -101,7 +100,7 @@ This series is mainly about the work within the development team and not so much
 
 The current total team size is roughly two dozen employees (including interns).
 The team can be divided into two parties.
-The business team and the development team.
+The **business team** and the **development team**.
 
 ### The business team
 
@@ -129,13 +128,13 @@ On a side note, we have been working 100% remotely for the past 6 months due to 
 ## Who am I?
 
 My name is Kevin.
-I am 26 years old, born in Hamburg, Germany.
+At the time of writing this, I am 26 years old.
 I've started programming when I was 12 years old.
-Back then, I used VB.Net (Visual Basic) to develop desktop applications that helped me host and customize a private server for an MMORPG game I was playing.
+Back then, I used VB.Net (Visual Basic) to develop desktop applications that helped me host and customize a private server for an MMORPG I was playing.
 I quickly got into web development, back then with PHP.
 When I was 16, I started my apprenticeship as a programmer in a small company.
 We were using Java (Spring 3.x, JSF, ...) to develop web applications for big automobile companies.
-I've completed my apprenticeship as a programmer at the age of 18 and worked as a full time full stack developer ever since.
+I've completed my apprenticeship at the age of 18 and worked as a full time full stack developer ever since.
 
 When I began working at my current job in January 2018, I was actually the first internal employee to start, followed by the next internal employee two weeks later.
 Before that, only freelancers were developing the systems and building a foundation.
