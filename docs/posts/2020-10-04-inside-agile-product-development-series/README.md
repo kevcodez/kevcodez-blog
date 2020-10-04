@@ -46,6 +46,7 @@ date: "2020-10-04"
 - Fuckups: Some of our fuckups and how we handled them
 - Hiring new developers: Freelancers and regular employees
 - The dichotomy between using third party systems and developing internally
+- Keeping up2date with the constantly changing ecosystem
 
 ## What is this series about?
 
