@@ -22,6 +22,10 @@ export default {
 
   padding: 0rem 0.5rem 0rem 0.5rem;
 
+  a.router-link-exact-active {
+    border-left: 4px solid #5a67d8;
+  }
+
 }
 
 .toc > div > ul > li {
@@ -58,9 +62,5 @@ padding-left: 10px;
     li:not(:last-child) {
       padding-bottom: 8px;
     }
-  }
-
-  a.router-link-exact-active {
-    border-left: 4px solid #5a67d8;
   }
 </style>
