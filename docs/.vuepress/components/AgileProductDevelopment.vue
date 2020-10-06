@@ -10,7 +10,7 @@
     </p>
 
     <div class="cta">
-      <a href="/posts/2020-10-04-inside-agile-product-development-series"
+      <a href="/inside-agile-product-development-series"
         >→ Read the introduction</a
       >
     </div>

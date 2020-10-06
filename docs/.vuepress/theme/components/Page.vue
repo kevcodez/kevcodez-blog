@@ -84,6 +84,10 @@ export default {
     prev() {
       const sortedFiles = this.sortedFiles;
 
+      if (this.$page.frontmatter.prev === false) {
+        return null;
+      }
+
       const prevIndex = this.indexOfCurrentPage - 1;
       if (prevIndex > -1) {
         return this.sortedFiles[prevIndex];
@@ -93,6 +97,10 @@ export default {
     },
     next() {
       const sortedFiles = this.sortedFiles;
+
+      if (this.$page.frontmatter.next === false) {
+        return null;
+      }
 
       const nextIndex = this.indexOfCurrentPage + 1;
       if (nextIndex < sortedFiles.length) {

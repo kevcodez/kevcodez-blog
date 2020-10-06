@@ -14,7 +14,7 @@ We are going to learn:
 - Visualizing your data in Kibana
 - Alerting downtimes using Kibana Watchers and Slack
 
-This is a two-parts series, check out the second part, [alerting uptime with Kibana watchers](/posts/2020-02-02-alerting-kibana-uptime).
+This is a two-parts series, check out the second part, [alerting uptime with Kibana watchers](/posts/2020-02-02-alerting-kibana-uptime/).
 
 ## Introduction
 
@@ -28,7 +28,7 @@ Elastic explains it well
 
 Heartbeat can easily be configured using YAML, pings your targets and sends the information to Logstash or straight to Elasticsearch.
 
-Supported transfer protocols are ICMP, TCP, and HTTP. TLS, authentication and proxies are supported aswell. 
+Supported transfer protocols are ICMP, TCP, and HTTP. TLS, authentication and proxies are supported aswell.
 
 On top of that, Kibana offers great visualization and alerting.
 
@@ -38,25 +38,25 @@ As for configuration, a simple YAML file is used.
 
 ```yml
 heartbeat.monitors:
-- type: http
-  schedule: '@every 5s'
-  urls:
-    - http://elasticsearch:9200
-    - http://kibana:5601
+  - type: http
+    schedule: "@every 5s"
+    urls:
+      - http://elasticsearch:9200
+      - http://kibana:5601
 
-- type: icmp
-  schedule: '@every 5s'
-  hosts:
-    - elasticsearch
-    - kibana
+  - type: icmp
+    schedule: "@every 5s"
+    hosts:
+      - elasticsearch
+      - kibana
 
 fields:
   environment: prod
 
 output.elasticsearch:
-  hosts: '${ELASTICSEARCH_HOSTS:elasticsearch:9200}'
-  username: '${ELASTICSEARCH_USERNAME:}'
-  password: '${ELASTICSEARCH_PASSWORD:}'
+  hosts: "${ELASTICSEARCH_HOSTS:elasticsearch:9200}"
+  username: "${ELASTICSEARCH_USERNAME:}"
+  password: "${ELASTICSEARCH_PASSWORD:}"
 ```
 
 I will explain the most common/important parts of the configuration, there is [a lot more to configure](https://www.elastic.co/guide/en/beats/heartbeat/7.5/heartbeat-reference-yml.html).
@@ -64,11 +64,11 @@ I will explain the most common/important parts of the configuration, there is [a
 ### Monitors
 
 The **heart** of heartbeat are monitors (pun intended).
-Each monitor has a type (transport protocol: *http*/*icmp*/*tcp*), a schedule (when to check) and a list of urls.
+Each monitor has a type (transport protocol: _http_/_icmp_/_tcp_), a schedule (when to check) and a list of urls.
 
 ```yaml
 - type: http
-  schedule: '@every 5s'
+  schedule: "@every 5s"
   urls:
     - http://elasticsearch:9200
     - http://kibana:5601
@@ -80,7 +80,7 @@ This monitor will do a HTTP call on `http://elasticsearch:9200` and `http://kiba
 
 ```yaml
 - type: http
-  schedule: '@every 1m'
+  schedule: "@every 1m"
   urls:
     - https://my-basic-auth-protected-rurl.com
   username: foo
@@ -93,12 +93,12 @@ This monitor will do a HTTP call on `https://my-basic-auth-protected-rurl.com` w
 
 ```yaml
 - type: http
-  schedule: '@every 5s'
+  schedule: "@every 5s"
   urls: ["http://localhost:8080/demo/add"]
   check.request:
     method: POST
     headers:
-      'Content-Type': 'application/x-www-form-urlencoded'
+      "Content-Type": "application/x-www-form-urlencoded"
     # urlencode the body:
     body: "name=first&email=someemail%40someemailprovider.com"
   check.response:
@@ -114,12 +114,12 @@ Issue a POST request every 5 seconds to http://localhost:8080/demo/add, with the
 
 ```yml
 - type: http
-  schedule: '@every 5s'
+  schedule: "@every 5s"
   hosts: ["https://myhost:80"]
   check.request:
     method: GET
     headers:
-      'X-API-Key': '12345-mykey-67890'
+      "X-API-Key": "12345-mykey-67890"
   check.response:
     status: 200
     json:
@@ -140,7 +140,7 @@ Fields can be scalar values, arrays, dictionaries, or any nested combination of 
 
 ### Processors
 
-Processors are used to reduce the number of fields in the exported event or to enhance the event with external metadata. 
+Processors are used to reduce the number of fields in the exported event or to enhance the event with external metadata.
 
 Check out the [full documentation on processors](https://www.elastic.co/guide/en/beats/heartbeat/7.5/defining-processors.html).
 
@@ -171,7 +171,7 @@ username: ${WIRECARD_USERNAME}
 password: ${WIRECARD_PASSWORD}
 
 urls:
-    - https://api.foo.com/products?query=test&apiKey=${API_KEY}
+  - https://api.foo.com/products?query=test&apiKey=${API_KEY}
 ```
 
 ## Running heartbeat
@@ -180,12 +180,13 @@ We'll start with the most simple example.
 Check kevcodez.de every 10 seconds and print the results to the console.
 
 heartbeat.yml
+
 ```yml
 heartbeat.monitors:
-- type: http
-  urls: ["https://kevcodez.de"]
-  name: Kevcodez
-  schedule: '@every 10s'
+  - type: http
+    urls: ["https://kevcodez.de"]
+    name: Kevcodez
+    schedule: "@every 10s"
 
 output.console:
   pretty: true
@@ -279,7 +280,7 @@ docker run -d \
   --name=heartbeat \
   --user=heartbeat \
   --volume="$(pwd)/heartbeat.yml:/usr/share/heartbeat/heartbeat.yml:ro" \
-  docker.elastic.co/beats/heartbeat:7.5.2 
+  docker.elastic.co/beats/heartbeat:7.5.2
 ```
 
 ## Packaging your own docker image
@@ -313,6 +314,6 @@ If you select a service, you can see all the pings and the latencies for each.
 
 ### Alerting
 
-Check out the second part, [alerting uptime with Kibana watchers](/posts/2020-02-02-alerting-kibana-uptime).
+Check out the second part, [alerting uptime with Kibana watchers](/posts/2020-02-02-alerting-kibana-uptime/).
 
 If you like this post, feel free to follow me or hit me up on [Twitter](https://twitter.com/kevcodez).

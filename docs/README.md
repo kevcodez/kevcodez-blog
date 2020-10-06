@@ -7,6 +7,7 @@ features:
   - title: Docker Logging with Fluentbit
     details: Logging from Docker Containers to Elasticsearch with Fluent Bit.
     url: /posts/2019-08-10-fluent-bit-docker-logging-driver-elasticsearch/
+pageClass: index
 ---
 
 <AgileProductDevelopment />

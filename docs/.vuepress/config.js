@@ -56,7 +56,11 @@ module.exports = {
       "feed",
       {
         canonical_base: "https://kevcodez.de",
-        posts_directories: ["/posts/", "/books/"],
+        posts_directories: [
+          "/posts/",
+          "/books/",
+          "/inside-agile-product-development/",
+        ],
       },
     ],
     [

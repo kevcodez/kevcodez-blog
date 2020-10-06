@@ -4,7 +4,7 @@
       <li>
         <section class="sidebar-group">
           <p class="sidebar-heading">
-            <span>Follow me</span>
+            <span>Keep up2date</span>
           </p>
         </section>
         <ul class="sidebar-sub-headers">
@@ -52,18 +52,13 @@
           </li>
         </ul>
       </li>
-      <li>
-        <section class="sidebar-group">
-          <p class="sidebar-heading">
-            <span>Recent posts</span>
-          </p>
-        </section>
-        <ul class="sidebar-sub-headers">
-          <li class="sidebar-sub-header" v-for="post in recentFiles">
-            <a class="sidebar-link" :href="post.path">{{ post.title }}</a>
-          </li>
-        </ul>
-      </li>
+
+      <GuideToc v-if="$page.frontmatter.type === 'guide'" :toc-file="tocFile" />
+
+      <RecentPosts
+        v-if="$page.frontmatter.type !== 'guide'"
+        :posts="recentFiles"
+      />
     </ul>
   </aside>
 </template>
@@ -76,6 +71,16 @@ export default {
     return {};
   },
   computed: {
+    tocFile() {
+      const file = "/" + this.$page.path.split("/")[1] + "/toc.html";
+      const matchingPage = this.$site.pages.find((p) => p.path === file);
+
+      if (matchingPage) {
+        return matchingPage.key;
+      } else {
+        return null;
+      }
+    },
     recentFiles() {
       let files = this.$site.pages
         .filter((p) => {
@@ -89,7 +94,7 @@ export default {
           if (diff < 0) return 1;
           return a.frontmatter.title.localeCompare(b.frontmatter.title);
         })
-        .slice(0, 12);
+        .slice(0, 8);
 
       return files;
     },
@@ -98,7 +103,31 @@ export default {
 </script>
 
 <style lang="stylus">
+@media (max-width: 959px) {
 .sidebar {
+    width: 100%;
+}
+}
+
+.sidebar::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.1);
+    background-color: #EDF2F7;
+}
+
+.sidebar::-webkit-scrollbar
+{
+    width: 6px;
+    background-color: #EDF2F7;
+}
+
+.sidebar::-webkit-scrollbar-thumb
+{
+background-color: #2D3748;
+}
+
+.sidebar {
+
   ul {
     padding: 0rem;
     margin-bottom: 5px;

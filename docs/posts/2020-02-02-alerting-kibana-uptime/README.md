@@ -5,7 +5,7 @@ date: "2020-02-02"
 
 # Alerting downtimes in Slack using Heartbeat and Elasticsearch Watchers
 
-This is a two parts series, check out the first part, [Elastic Heartbeat uptime and latency monitoring](/posts/2020-02-02-elastic-heartbeat-uptime-latency-monitoring).
+This is a two parts series, check out the first part, [Elastic Heartbeat uptime and latency monitoring](/posts/2020-02-02-elastic-heartbeat-uptime-latency-monitoring/).
 
 To setup an alerting, we can use an [Elasticsearch Watcher](https://www.elastic.co/guide/en/kibana/current/watcher-ui.html).
 
@@ -32,9 +32,7 @@ First, the complete example, which we'll break down afterwards
     "search": {
       "request": {
         "search_type": "query_then_fetch",
-        "indices": [
-          "heartbeat-*"
-        ],
+        "indices": ["heartbeat-*"],
         "rest_total_hits_as_int": true,
         "body": {
           "size": 0,
@@ -86,9 +84,7 @@ First, the complete example, which we'll break down afterwards
       "slack": {
         "message": {
           "from": "Heartbeat",
-          "to": [
-            "#ops"
-          ],
+          "to": ["#ops"],
           "text": "Some systems are not replying.",
           "dynamic_attachments": {
             "list_path": "ctx.payload.aggregations.by_monitors.buckets",

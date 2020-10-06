@@ -1,57 +1,17 @@
 ---
-title: "Inside Agile Product Development Series"
 date: "2020-10-04"
-sidebar: false
+type: "guide"
+editLink: false
+search: false
+prev: false
+next: false
 ---
 
-# Inside Agile Product Development Series
-
-- [Introduction to the series](/posts/2020-10-04-inside-agile-product-development-series)
-  - [What is this series about?](#what-is-this-series-about)
-  - [The Product](#the-product)
-  - [The Team](#the-team)
-  - [Who am I?](#who-am-i)
-- How it all started
-- A brief overview of our stack
-  - Codebase
-  - Frontend/Backend/Ops Stack
-  - Tools for development, documentation and communication
-- Product development vs. Project development
-- Responsibilities and ownership
-- Agile Development: Scrumban
-- Lifecycle of a task
-  - Planning & Prioritizing
-  - Implementation
-  - Quality Assurance
-  - Documentation
-  - Introducing the changes to the whole team
-- Testing principles
-- Technical Debt & Refactorings
-- Handling Bugs
-- Pair Programming & Reviews
-- Continuous Integration/Deployment
-- How we do operations
-- Monitoring, Logging & Alerting
-- Deadlines in an agile development team
-- Recurring Meetings
-  - The Daily
-  - Story Time
-  - Weekly Developer Meetup
-  - Retrospectives
-- Different abilities & ranks within a team
-  - Do you need a lead developer?
-- Making decisions
-  - How do we find common ground?
-  - Handling decisions with divided opinions
-- Avoiding knowledge silos
-- Fuckups: Some of our fuckups and how we handled them
-- Hiring new developers: Freelancers and regular employees
-- The dichotomy between using third party systems and developing internally
-- Keeping up2date with the constantly changing ecosystem
+# Introduction to the series
 
 ## What is this series about?
 
-This series gives you an overview and insights of how we work as an agile software development team to continuously develop & ship a product.
+The series **Inside Agile Product Development** gives you an overview and insights of how we work as an agile software development team to continuously develop & ship a product.
 It covers a variety of different, also non-technical, topics.
 The good, the bad and the ugly.
 I will not go into implementation detail or provide code samples.
@@ -143,3 +103,5 @@ So it wasn't a green-field project for us, but still very early in its developme
 It's important to note that the product was already live and had its customers.
 
 Everything written in this series are my own experiences and my own opinion.
+
+A new part will be released every week.
