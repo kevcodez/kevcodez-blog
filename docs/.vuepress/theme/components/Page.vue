@@ -102,8 +102,6 @@ export default {
     next() {
       const sortedFiles = this.sortedFiles;
 
-      console.log(sortedFiles);
-
       if (this.$page.frontmatter.next === false) {
         return null;
       } else if (this.$page.frontmatter.next === true) {
