@@ -86,27 +86,37 @@ export default {
 
       if (this.$page.frontmatter.prev === false) {
         return null;
-      }
-
-      const prevIndex = this.indexOfCurrentPage - 1;
-      if (prevIndex > -1) {
-        return this.sortedFiles[prevIndex];
+      } else if (this.$page.frontmatter.prev === true) {
+        const prevIndex = this.indexOfCurrentPage - 1;
+        if (prevIndex > -1) {
+          return this.sortedFiles[prevIndex];
+        } else {
+          return null;
+        }
       } else {
-        return null;
+        return this.sortedFiles.find(
+          (it) => it.path === this.$page.frontmatter.prev
+        );
       }
     },
     next() {
       const sortedFiles = this.sortedFiles;
 
+      console.log(sortedFiles);
+
       if (this.$page.frontmatter.next === false) {
         return null;
-      }
-
-      const nextIndex = this.indexOfCurrentPage + 1;
-      if (nextIndex < sortedFiles.length) {
-        return this.sortedFiles[nextIndex];
+      } else if (this.$page.frontmatter.next === true) {
+        const nextIndex = this.indexOfCurrentPage + 1;
+        if (nextIndex < sortedFiles.length) {
+          return this.sortedFiles[nextIndex];
+        } else {
+          return null;
+        }
       } else {
-        return null;
+        return this.sortedFiles.find(
+          (it) => it.path === this.$page.frontmatter.next
+        );
       }
     },
     editLink() {

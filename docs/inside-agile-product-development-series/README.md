@@ -4,7 +4,7 @@ type: "guide"
 editLink: false
 search: false
 prev: false
-next: false
+next: '/inside-agile-product-development-series/01-how-it-all-started/'
 ---
 
 # Introduction to the series

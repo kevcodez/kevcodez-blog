@@ -6,11 +6,11 @@ sitemap:
 Inside Agile Product Development Series
 
 - [Introduction to the series](/inside-agile-product-development-series/)
-  - [What is this series about?](#what-is-this-series-about)
-  - [The Product](#the-product)
-  - [The Team](#the-team)
-  - [Who am I?](#who-am-i)
-- _How it all started_
+  - [What is this series about?](/inside-agile-product-development-series/#what-is-this-series-about)
+  - [The Product](/inside-agile-product-development-series/#the-product)
+  - [The Team](/inside-agile-product-development-series/#the-team)
+  - [Who am I?](/inside-agile-product-development-series/#who-am-i)
+- [How it all started](./01-how-it-all-started/)
 - _A brief overview of our stack_
   - Codebase
   - Frontend/Backend/Ops Stack
