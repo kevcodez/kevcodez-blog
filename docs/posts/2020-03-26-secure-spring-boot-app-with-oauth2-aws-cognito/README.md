@@ -20,7 +20,7 @@ Since there are many good articles about OAuth/AWS Cognito Setup out there, I am
 
 Let's quickly initialize a new project using the great [Spring Initializr](https://start.spring.io/).
 
-Again, we only want to *verify* the tokens sent to our application and make sure the user is authanticated and has the proper roles to execute function.
+Again, we only want to *verify* the tokens sent to our application and make sure the user is authenticated and has the proper roles to execute function.
 
 We do *not* want to create custom login pages or anything similar in this tutorial.
 
@@ -188,5 +188,9 @@ class MethodSecurityConfig : GlobalMethodSecurityConfiguration()
 That was pretty quick to setup right?
 
 You can find the source on [Github](https://github.com/kevcodez/spring-boot-2.3-oauth2-aws-cognito).
+
+Another guide that might help you with Spring Boot/JWT/Authentication:
+
+[Spring Security with JWT for REST API on toptal.com](https://www.toptal.com/spring/spring-security-tutorial)
 
 If you like this post, feel free to follow me or hit me up on [Twitter](https://twitter.com/kevcodez).
