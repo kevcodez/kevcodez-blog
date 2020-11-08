@@ -11,7 +11,7 @@ Inside Agile Product Development Series
   - [The Team](/inside-agile-product-development-series/#the-team)
   - [Who am I?](/inside-agile-product-development-series/#who-am-i)
 - [How it all started](./01-how-it-all-started/)
-- [A brief overview of our stack](./02-brief-overview-stack/)
+- [A brief overview of the stack](./02-brief-overview-stack/)
   - [Codebase](./02-brief-overview-stack/#codebase)
   - [Frontend/Backend/Ops Stack](./02-brief-overview-stack/#frontend-backend-ops)
   - [Tools for development, communication and documentation](./02-brief-overview-stack/#tools-for-development-communication-and-documentation)

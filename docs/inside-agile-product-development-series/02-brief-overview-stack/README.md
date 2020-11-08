@@ -7,7 +7,7 @@ prev: '/inside-agile-product-development-series/01-how-it-all-started/'
 next: false
 ---
 
-# A brief overview of our stack
+# A brief overview of the stack
 
 I promised that the insights in this series won't get too technical.
 However, I think it might be interesting for some readers to get a brief overview of the tech stack.
