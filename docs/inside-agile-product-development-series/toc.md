@@ -11,10 +11,10 @@ Inside Agile Product Development Series
   - [The Team](/inside-agile-product-development-series/#the-team)
   - [Who am I?](/inside-agile-product-development-series/#who-am-i)
 - [How it all started](./01-how-it-all-started/)
-- _A brief overview of our stack_
-  - Codebase
-  - Frontend/Backend/Ops Stack
-  - Tools for development, documentation and communication
+- [A brief overview of our stack](./02-brief-overview-stack/)
+  - [Codebase](./02-brief-overview-stack/#codebase)
+  - [Frontend/Backend/Ops Stack](./02-brief-overview-stack/#frontend-backend-ops)
+  - [Tools for development, communication and documentation](./02-brief-overview-stack/#tools-for-development-communication-and-documentation)
 - _Product development vs. Project development_
 - _Responsibilities and ownership_
 - _Agile Development: Scrumban_
