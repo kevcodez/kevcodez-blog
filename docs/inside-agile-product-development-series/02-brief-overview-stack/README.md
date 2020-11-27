@@ -4,7 +4,7 @@ type: "guide"
 editLink: false
 search: false
 prev: '/inside-agile-product-development-series/01-how-it-all-started/'
-next: false
+next: '/inside-agile-product-development-series/03-product-development-vs-project-development/'
 ---
 
 # A brief overview of the stack

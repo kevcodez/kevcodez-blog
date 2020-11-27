@@ -15,8 +15,8 @@ Inside Agile Product Development Series
   - [Codebase](./02-brief-overview-stack/#codebase)
   - [Frontend/Backend/Ops Stack](./02-brief-overview-stack/#frontend-backend-ops)
   - [Tools for development, communication and documentation](./02-brief-overview-stack/#tools-for-development-communication-and-documentation)
-- _Product development vs. Project development_
-- _Responsibilities and ownership_
+- [Product development vs. Project development](./03-product-development-vs-project-development/)
+- [Responsibilities and ownership](./04-responsibilities-ownership/)
 - _Agile Development: Scrumban_
 - _Lifecycle of a task_
   - Planning & Prioritizing

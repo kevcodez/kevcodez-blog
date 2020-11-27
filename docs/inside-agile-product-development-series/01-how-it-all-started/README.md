@@ -4,7 +4,7 @@ type: "guide"
 editLink: false
 search: false
 prev: '/inside-agile-product-development-series/'
-next: false
+next: '/inside-agile-product-development-series/02-brief-overview-stack/'
 ---
 
 # How it all started
