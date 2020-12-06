@@ -18,6 +18,11 @@ Inside Agile Product Development Series
 - [Product development vs. Project development](./03-product-development-vs-project-development/)
 - [Responsibilities and ownership](./04-responsibilities-ownership/)
 - [Agile Development: Scrumban](./05-agile-development-scrumban/)
+- _Recurring Meetings_
+  - The Daily
+  - Story Time
+  - Weekly Developer Meetup
+  - Retrospectives
 - _Lifecycle of a task_
   - Planning & Prioritizing
   - Implementation
@@ -33,11 +38,6 @@ Inside Agile Product Development Series
 - _Monitoring, Logging & Alerting_
   - The Daily Logger
 - _Deadlines in an agile development team_
-- _Recurring Meetings_
-  - The Daily
-  - Story Time
-  - Weekly Developer Meetup
-  - Retrospectives
 - _Different abilities & ranks within a team_
   - Do you need a lead developer?
 - _Making decisions_
@@ -45,6 +45,5 @@ Inside Agile Product Development Series
   - Handling decisions with divided opinions
 - _Avoiding knowledge silos_
 - _Fuckups: Some of our fuckups and how we handled them_
-- _Hiring new developers: Freelancers and regular employees_
 - _The dichotomy between using third party systems and developing internally_
 - _Keeping up2date with the constantly changing ecosystem_
