@@ -39,6 +39,7 @@ module.exports = {
         link: "https://github.com/kevcodez",
       },
     ],
+    lastUpdated: "Last Updated",
     repo: "kevcodez/kevcodez-blog",
     repoLabel: "Contribute!",
     docsDir: "docs",

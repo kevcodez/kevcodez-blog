@@ -50,7 +50,7 @@ export default {
   props: ["sidebarItems"],
   computed: {
     lastUpdated() {
-      return this.$page.lastUpdated;
+      return this.$page.frontmatter.type !== "guide" && this.$page.lastUpdated;
     },
     lastUpdatedText() {
       if (typeof this.$themeLocaleConfig.lastUpdated === "string") {

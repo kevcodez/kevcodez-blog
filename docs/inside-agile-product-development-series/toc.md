@@ -17,7 +17,7 @@ Inside Agile Product Development Series
   - [Tools for development, communication and documentation](./02-brief-overview-stack/#tools-for-development-communication-and-documentation)
 - [Product development vs. Project development](./03-product-development-vs-project-development/)
 - [Responsibilities and ownership](./04-responsibilities-ownership/)
-- _Agile Development: Scrumban_
+- [Agile Development: Scrumban](./05-agile-development-scrumban/)
 - _Lifecycle of a task_
   - Planning & Prioritizing
   - Implementation
