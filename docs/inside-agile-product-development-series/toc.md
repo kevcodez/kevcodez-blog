@@ -18,11 +18,11 @@ Inside Agile Product Development Series
 - [Product development vs. Project development](./03-product-development-vs-project-development/)
 - [Responsibilities and ownership](./04-responsibilities-ownership/)
 - [Agile Development: Scrumban](./05-agile-development-scrumban/)
-- _Recurring Meetings_
-  - The Daily
-  - Story Time
-  - Weekly Developer Meetup
-  - Retrospectives
+- [Recurring Meetings](./06-recurring-meetings/)
+  - [The Daily](./06-recurring-meetings/#the-daily)
+  - [Story Time](./06-recurring-meetings/#story-time)
+  - [Weekly Developer Meetup](./06-recurring-meetings/#weekly-developer-meetup)
+  - [Retrospectives](./06-recurring-meetings/#retrospectives)
 - _Lifecycle of a task_
   - Planning & Prioritizing
   - Implementation

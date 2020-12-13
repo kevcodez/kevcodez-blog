@@ -4,7 +4,7 @@ type: "guide"
 editLink: false
 search: false
 prev: '/inside-agile-product-development-series/03-product-development-vs-project-development/'
-next: '/inside-agile-product-development-series/05-agile-development-scrumban'
+next: '/inside-agile-product-development-series/05-agile-development-scrumban/'
 ---
 
 # Responsibilities and ownership
