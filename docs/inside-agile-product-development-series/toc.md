@@ -30,7 +30,7 @@ Inside Agile Product Development Series
   - [Quality Assurance](./07-lifecycle-of-a-story/#quality-assurance)
   - [Documentation](./07-lifecycle-of-a-story/#documentation)
   - [Introducing the changes to the whole team](./07-lifecycle-of-a-story/#introducing-the-changes-to-the-whole-team)
-- _Testing principles_
+- [Testing principles](./08-testing-principles/)
 - _Technical Debt & Refactorings_
 - _Handling Bugs_
 - _Pair Programming & Reviews_

@@ -4,7 +4,7 @@ type: "guide"
 editLink: false
 search: false
 prev: '/inside-agile-product-development-series/06-recurring-meetings/'
-next: false
+next: '/inside-agile-product-development-series/08-testing-principles/'
 ---
 
 # Lifecycle of a story
