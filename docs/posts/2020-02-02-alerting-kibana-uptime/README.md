@@ -1,5 +1,5 @@
 ---
-title: "Alerting downtimes in Slack using Heartbeat and KiElasticsearchbana Watchers"
+title: "Alerting downtimes in Slack using Heartbeat and Elasticsearch Watchers"
 date: "2020-02-02"
 ---
 

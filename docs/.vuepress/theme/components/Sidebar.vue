@@ -94,7 +94,7 @@ export default {
           if (diff < 0) return 1;
           return a.frontmatter.title.localeCompare(b.frontmatter.title);
         })
-        .slice(0, 8);
+        .slice(0, 10);
 
       return files;
     },

@@ -1,7 +1,7 @@
 module.exports = {
   title: "kevcodez - Developer Blog",
   description:
-    "Developer Blog - Java, Kotlin, Spring, Postgres, DevOps, Dev stuff",
+    "Developer Blog - Java, Kotlin, Spring, Postgres, DevOps, Web development",
   evergreen: true,
   head: [
     [

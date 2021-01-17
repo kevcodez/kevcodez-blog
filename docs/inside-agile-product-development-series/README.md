@@ -7,17 +7,18 @@ prev: false
 next: '/inside-agile-product-development-series/01-how-it-all-started/'
 ---
 
-# Introduction to the series
+# Introduction to the Inside Agile Product Development series
 
 ## What is this series about?
 
-The series **Inside Agile Product Development** gives you an overview and insights of how we work as an agile software development team to continuously develop & ship a product.
+The **Inside Agile Product Development** series gives you an overview and insights of how we work as an agile software development team to continuously develop & ship a product.
 It covers a variety of different, also non-technical, topics.
 The good, the bad and the ugly.
-I will not go into implementation detail or provide code samples.
+The successes, failures and learnings.
 
 Take a glance inside a real-world development team.
 All the stories, experiences and approaches are real.
+I will not go into implementation detail or provide code samples.
 
 Please note that everything written in this series is written regarding our team.
 Just because something did not work or did work for us, does not mean it also applies to your development team.

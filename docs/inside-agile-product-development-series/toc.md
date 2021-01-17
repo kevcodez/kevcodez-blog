@@ -6,33 +6,15 @@ sitemap:
 Inside Agile Product Development Series
 
 - [Introduction to the series](/inside-agile-product-development-series/)
-  - [What is this series about?](/inside-agile-product-development-series/#what-is-this-series-about)
-  - [The Product](/inside-agile-product-development-series/#the-product)
-  - [The Team](/inside-agile-product-development-series/#the-team)
-  - [Who am I?](/inside-agile-product-development-series/#who-am-i)
 - [How it all started](./01-how-it-all-started/)
 - [A brief overview of the stack](./02-brief-overview-stack/)
-  - [Codebase](./02-brief-overview-stack/#codebase)
-  - [Frontend/Backend/Ops Stack](./02-brief-overview-stack/#frontend-backend-ops)
-  - [Tools for development, communication and documentation](./02-brief-overview-stack/#tools-for-development-communication-and-documentation)
 - [Product development vs. Project development](./03-product-development-vs-project-development/)
 - [Responsibilities and ownership](./04-responsibilities-ownership/)
 - [Agile Development: Scrumban](./05-agile-development-scrumban/)
 - [Recurring Meetings](./06-recurring-meetings/)
-  - [The Daily](./06-recurring-meetings/#the-daily)
-  - [Story Time](./06-recurring-meetings/#story-time)
-  - [Weekly Developer Meetup](./06-recurring-meetings/#weekly-developer-meetup)
-  - [Retrospectives](./06-recurring-meetings/#retrospectives)
 - [Lifecycle of a story](./07-lifecycle-of-a-story/)
-  - [Creation](./07-lifecycle-of-a-story/#creation)
-  - [Refinement &amp; Prioritization](./07-lifecycle-of-a-story/#refinement-prioritization)
-  - [Implementation](./07-lifecycle-of-a-story/#implementation)
-  - [Quality Assurance](./07-lifecycle-of-a-story/#quality-assurance)
-  - [Documentation](./07-lifecycle-of-a-story/#documentation)
-  - [Introducing the changes to the whole team](./07-lifecycle-of-a-story/#introducing-the-changes-to-the-whole-team)
 - [Testing principles](./08-testing-principles/)
-- _Technical Debt & Refactorings_
-- _Handling Bugs_
+- [Technical Debt & Refactorings](./09-technical-debt-refactoring/)
 - _Pair Programming & Reviews_
 - _Continuous Integration/Deployment_
 - _How we do operations_
