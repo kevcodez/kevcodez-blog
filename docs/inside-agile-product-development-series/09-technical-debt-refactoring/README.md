@@ -79,3 +79,6 @@ We tried to keep our testing environment as close as possible to the production 
 However, some external services provided by third party providers may not offer test environments and the data on the test environment is completely anonymized (Yours isn't or only partially? Take action now before you learn it the hard way).
 On bigger refactorings, we would usually pair program.
 Besides that, we ran many dry-runs on test and production data to make sure we don't mess up.
+
+New architectural changes to tackle technical debt were also done in a non-breaking way, starting in a single service and figuring out the best way to do it.
+Later on, that change was applied to all other services and eventually any remains of the technical debt were removed.
