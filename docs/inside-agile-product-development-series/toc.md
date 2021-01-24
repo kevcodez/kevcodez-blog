@@ -15,7 +15,7 @@ Inside Agile Product Development Series
 - [Lifecycle of a story](./07-lifecycle-of-a-story/)
 - [Testing principles](./08-testing-principles/)
 - [Technical Debt & Refactorings](./09-technical-debt-refactoring/)
-- _Pair Programming & Reviews_
+- [Pair Programming & Reviews](./10-pair-programming-reviews/)
 - _Continuous Integration/Deployment_
 - _How we do operations_
 - _Monitoring, Logging & Alerting_
