@@ -43,7 +43,7 @@ module.exports = {
     repo: "kevcodez/kevcodez-blog",
     repoLabel: "Contribute!",
     docsDir: "docs",
-    editLinks: true,
+    editLinks: false,
     editLinkText: "Help improve this page!",
     sidebar: [
       {

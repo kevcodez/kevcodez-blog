@@ -16,7 +16,7 @@ Inside Agile Product Development Series
 - [Testing principles](./08-testing-principles/)
 - [Technical Debt & Refactorings](./09-technical-debt-refactoring/)
 - [Pair Programming & Reviews](./10-pair-programming-reviews/)
-- _Continuous Integration/Deployment_
+- [Continuous Integration & Deployment](./11-continuous-integration-deployment/)
 - _How we do operations_
 - _Monitoring, Logging & Alerting_
   - The Daily Logger

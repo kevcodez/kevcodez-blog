@@ -26,7 +26,7 @@
                 />
               </div>
 
-              <span style="align-self: center">kevcodez</span>
+              <span style="align-self: center">Twitter</span>
             </a>
           </li>
           <li class="sidebar-sub-header">
@@ -47,7 +47,96 @@
                 />
               </div>
 
-              <span style="align-self: center">kevcodez</span>
+              <span style="align-self: center">Github</span>
+            </a>
+          </li>
+          <li class="sidebar-sub-header">
+            <a
+              class="sidebar-link"
+              style="display: flex"
+              href="https://getmakerlog.com/@kevcodez"
+              target="_blank"
+              rel="noopener"
+            >
+              <div
+                style="height: 32px; width: 32px;margin-right: 0.5em;  display: flex; justify-content: center; align-items: center; color: rgb(0,173,113)"
+              >
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  style="height: 25px; width; 25px; "
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+                  ></path>
+                </svg>
+              </div>
+
+              <span style="align-self: center">Makerlog</span>
+            </a>
+          </li>
+          <li class="sidebar-sub-header">
+            <a
+              class="sidebar-link"
+              style="display: flex"
+              href="https://www.indiehackers.com/kevcodez"
+              target="_blank"
+              rel="noopener"
+            >
+              <div
+                style="height: 32px; width: 32px;margin-right: 0.5em;  display: flex; justify-content: center; align-items: center; color: rgb(0,173,113)"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 120 120"
+                  style="height: 25px; width; 25px; "
+                >
+                  <rect
+                    class="background"
+                    x="0"
+                    y="0"
+                    height="120"
+                    width="120"
+                    fill="hsl(210, 60%, 14%)"
+                  />
+                  <g class="text" fill="white">
+                    <rect
+                      class="text__i"
+                      x="27"
+                      y="34"
+                      height="52"
+                      width="12"
+                    />
+                    <rect
+                      class="text__h"
+                      x="51"
+                      y="34"
+                      height="52"
+                      width="12"
+                    />
+                    <rect
+                      class="text__h"
+                      x="61"
+                      y="54"
+                      height="12"
+                      width="22"
+                    />
+                    <rect
+                      class="text__h"
+                      x="81"
+                      y="34"
+                      height="52"
+                      width="12"
+                    />
+                  </g>
+                </svg>
+              </div>
+
+              <span style="align-self: center">Indiehackers</span>
             </a>
           </li>
         </ul>
