@@ -89,5 +89,12 @@ module.exports = {
         ga: "UA-64629196-1",
       },
     ],
+    [
+      "@mr-hope/seo",
+      {
+        author: "Kevin Grüneberg",
+        twitterId: "kevcodez",
+      },
+    ],
   ],
 };
