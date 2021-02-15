@@ -34,7 +34,7 @@ When continuously deploying to the production environment, trunk-based developme
 Quick Note:
 Trunk-Based development does not prevent you from creating short-lived branches entirely.
 You can still do that to complement your development.
-Trun-Based development does not mean that you do not run tests, deploy to other environments or do whatever to ensure everything is cool, before going for production.
+Trunk-Based development does not mean that you do not run tests, deploy to other environments or do whatever to ensure everything is cool, before going for production.
 Quite the opposite.
 When continuously deploying to production, you want to make sure whatever you are committing is not going to break your service.
 This enforces writing proper tests, do non-breaking changes and do small increments, if possible.
