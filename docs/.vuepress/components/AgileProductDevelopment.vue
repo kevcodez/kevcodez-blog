@@ -1,9 +1,12 @@
 <template>
   <div class="agile-product-development">
-    <h2>Inside Agile Product Development Series</h2>
+     <img
+                  src="/inside-agile.png"
+                  alt="Inside Agile Product Development Series"
+                />
 
     <p>
-      The <strong>inside agile product development series</strong> gives you an
+      The <strong>Inside Agile Product Development Series</strong> gives you an
       overview of how we work as an agile software development team to
       continuously develop &amp; ship a product. It covers a variety of
       different, also non-technical, topics. The good, the bad and the ugly.

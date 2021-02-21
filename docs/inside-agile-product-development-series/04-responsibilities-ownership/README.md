@@ -42,7 +42,7 @@ No blaming, just getting it done.
 We surely talked about it afterwards on how to avoid those issues in the future, but we didn't point fingers.
 If your colleague is a normal human with normal emotions, he/she will already feel bad enough for messing up - no need to emphasize.
 
-Many of the features or process improvements and improvements were actually suggested by developers, talked through with the business and product owners and then implemented.
+Many of the features or process improvements were actually suggested by developers, talked through with the business and product owners and then implemented.
 
 For me, having this kind of responsibility and actually making use of it comes with building a bond with the product and team.
 I have a hard time keeping work and personal life separated and I don't mind.
@@ -59,9 +59,9 @@ Especially in product development, where the team has a lot of freedom, but also
 It is important to stay disciplined.
 The freedom and possibly lack of deadlines allows you to theoretically spend way too much time looking for the perfect framework/implementation.
 You should keep a high quality standard, however, you must also be pragmatic at some point.
-A good stigma is the (https://en.wikipedia.org/wiki/Pareto_principle)[Pareto principle].
+A good stigma is the [Pareto principle](https://en.wikipedia.org/wiki/Pareto_principle).
 You might now it as the **80/20 rule**, meaning you get 80% done in 20% of the time/effort you put in.
 Usually, you get pretty far if you follow the rule.
 It does not mean, you should stop implementation and testing because you reached 80%.
-You should still question yourself, if the amount of time you are invensting is worth the outcome.
+You should still question yourself, if the amount of time you are investing is worth the outcome.
 Do not abuse the freedom that comes with product development, you still need to get shit done.

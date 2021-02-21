@@ -4,7 +4,7 @@ type: "guide"
 editLink: false
 search: false
 prev: '/inside-agile-product-development-series/10-pair-programming-reviews/'
-next: false
+next: '/inside-agile-product-development-series/12-daily-logger/'
 ---
 
 # Continuous Integration & Deployment

@@ -17,9 +17,7 @@ Inside Agile Product Development Series
 - [Technical Debt & Refactorings](./09-technical-debt-refactoring/)
 - [Pair Programming & Reviews](./10-pair-programming-reviews/)
 - [Continuous Integration & Deployment](./11-continuous-integration-deployment/)
-- _How we do operations_
-- _Monitoring, Logging & Alerting_
-  - The Daily Logger
+- [The Daily Logger](./12-daily-logger/)
 - _Deadlines in an agile development team_
 - _Different abilities & ranks within a team_
   - Do you need a lead developer?
