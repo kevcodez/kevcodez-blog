@@ -18,7 +18,7 @@ Inside Agile Product Development Series
 - [Pair Programming & Reviews](./10-pair-programming-reviews/)
 - [Continuous Integration & Deployment](./11-continuous-integration-deployment/)
 - [The Daily Logger](./12-daily-logger/)
-- _Deadlines in an agile development team_
+- [Deadlines](./13-deadlines/)
 - _Different abilities & ranks within a team_
   - Do you need a lead developer?
 - _Making decisions_
