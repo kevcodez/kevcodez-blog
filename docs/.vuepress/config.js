@@ -60,7 +60,7 @@ module.exports = {
         posts_directories: [
           "/posts/",
           "/books/",
-          "/inside-agile-product-development/",
+          "/inside-agile-product-development-series/",
         ],
       },
     ],
