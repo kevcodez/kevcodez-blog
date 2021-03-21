@@ -1,3 +1,5 @@
+const _ = require("lodash");
+
 module.exports = {
   title: "kevcodez - Developer Blog",
   description:
@@ -58,10 +60,11 @@ module.exports = {
       {
         canonical_base: "https://kevcodez.de",
         posts_directories: [
+          "/inside-agile-product-development-series/",
           "/posts/",
           "/books/",
-          "/inside-agile-product-development-series/",
         ],
+        sort: (entries) => _.reverse(_.sortBy(entries, "date")),
       },
     ],
     [
