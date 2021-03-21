@@ -65,6 +65,7 @@ module.exports = {
           "/books/",
         ],
         sort: (entries) => _.reverse(_.sortBy(entries, "date")),
+        count: 100,
       },
     ],
     [
