@@ -56,16 +56,14 @@ module.exports = {
   },
   plugins: [
     [
-      "feed",
+      "rss-feed",
       {
-        canonical_base: "https://kevcodez.de",
-        posts_directories: [
-          "/inside-agile-product-development-series/",
-          "/posts/",
-          "/books/",
-        ],
-        sort: (entries) => _.reverse(_.sortBy(entries, "date")),
-        count: 100,
+        username: "kevcodez",
+        language: "en-US",
+        hostname: "kevcodez.de",
+        selector: ".content__default", // extract content to content:encoded
+        count: 25,
+        filter: (page) => page.frontmatter.date,
       },
     ],
     [
