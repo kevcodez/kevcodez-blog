@@ -5,6 +5,7 @@ editLink: false
 search: false
 prev: '/inside-agile-product-development-series/08-testing-principles/'
 next: '/inside-agile-product-development-series/10-pair-programming-reviews/'
+title: 'Technical debt and refactoring'
 ---
 
 # Technical debt and refactoring

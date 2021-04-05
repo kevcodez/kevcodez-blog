@@ -24,7 +24,7 @@ export default {
   computed: {
     posts() {
       let files = this.$site.pages
-        .filter((it) => it.path !== "/" && it.path.includes("posts"))
+        .filter((it) => it.frontmatter && it.frontmatter.title)
         .sort((a, b) => {
           let aDate = new Date(a.frontmatter.date).getTime();
           let bDate = new Date(b.frontmatter.date).getTime();
@@ -33,7 +33,7 @@ export default {
           if (diff < 0) return 1;
           return a.frontmatter.title.localeCompare(b.frontmatter.title);
         })
-        .slice(0, 10);
+        .slice(0, 40);
 
       return files;
     },

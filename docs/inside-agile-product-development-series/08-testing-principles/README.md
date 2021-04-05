@@ -5,6 +5,7 @@ editLink: false
 search: false
 prev: '/inside-agile-product-development-series/07-lifecycle-of-a-story/'
 next: '/inside-agile-product-development-series/09-technical-debt-refactoring/'
+title: 'Testing principles'
 ---
 
 # Testing principles

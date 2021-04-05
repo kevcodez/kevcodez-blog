@@ -4,7 +4,8 @@ type: "guide"
 editLink: false
 search: false
 prev: '/inside-agile-product-development-series/12-daily-logger/'
-next: false
+next: '/inside-agile-product-development-series/14-avoiding-knowledge-silos/'
+title: 'Deadlines'
 ---
 
 # Deadlines

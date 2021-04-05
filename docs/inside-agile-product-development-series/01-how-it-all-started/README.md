@@ -5,6 +5,7 @@ editLink: false
 search: false
 prev: '/inside-agile-product-development-series/'
 next: '/inside-agile-product-development-series/02-brief-overview-stack/'
+title: 'How it all started'
 ---
 
 # How it all started

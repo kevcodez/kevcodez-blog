@@ -4,7 +4,7 @@
       <li>
         <section class="sidebar-group">
           <p class="sidebar-heading">
-            <span>Keep up2date</span>
+            <span>Follow along</span>
           </p>
         </section>
         <ul class="sidebar-sub-headers">
@@ -172,10 +172,9 @@ export default {
     },
     recentFiles() {
       let files = this.$site.pages
-        .filter((p) => {
-          return p.path.indexOf("/posts/") >= 0;
-        })
+        .filter((it) => it.frontmatter && it.frontmatter.title)
         .sort((a, b) => {
+          console.log(a.frontmatter.title);
           let aDate = new Date(a.frontmatter.date).getTime();
           let bDate = new Date(b.frontmatter.date).getTime();
           let diff = aDate - bDate;
@@ -183,7 +182,7 @@ export default {
           if (diff < 0) return 1;
           return a.frontmatter.title.localeCompare(b.frontmatter.title);
         })
-        .slice(0, 10);
+        .slice(0, 20);
 
       return files;
     },

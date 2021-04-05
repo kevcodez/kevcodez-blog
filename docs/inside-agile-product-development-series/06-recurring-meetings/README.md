@@ -5,6 +5,7 @@ editLink: false
 search: false
 prev: '/inside-agile-product-development-series/05-agile-development-scrumban/'
 next: '/inside-agile-product-development-series/07-lifecycle-of-a-story/'
+title: 'Recurring Meetings'
 ---
 
 # Recurring Meetings

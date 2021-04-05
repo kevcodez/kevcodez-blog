@@ -5,6 +5,7 @@ editLink: false
 search: false
 prev: '/inside-agile-product-development-series/01-how-it-all-started/'
 next: '/inside-agile-product-development-series/03-product-development-vs-project-development/'
+title: 'A brief overview of the stack'
 ---
 
 # A brief overview of the stack

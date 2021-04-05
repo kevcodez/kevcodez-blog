@@ -5,13 +5,6 @@
     <Content class="theme-default-content custom" />
 
     <footer class="page-edit">
-      <div class="edit-link" v-if="editLink">
-        <a :href="editLink" target="_blank" rel="noopener noreferrer">{{
-          editLinkText
-        }}</a>
-        <OutboundLink />
-      </div>
-
       <div class="last-updated" v-if="lastUpdated">
         <span class="prefix">{{ lastUpdatedText }}: </span>
         <span class="time">{{ lastUpdated }}</span>
@@ -41,11 +34,7 @@
 </template>
 
 <script>
-import {
-  resolvePage,
-  outboundRE,
-  endingSlashRE,
-} from "@vuepress/theme-default/util";
+import { outboundRE, endingSlashRE } from "@vuepress/theme-default/util";
 export default {
   props: ["sidebarItems"],
   computed: {
@@ -74,7 +63,6 @@ export default {
       return files;
     },
     indexOfCurrentPage() {
-      const sortedFiles = this.sortedFiles;
       for (var i = 0; i < this.sortedFiles.length; i++) {
         if (this.sortedFiles[i].regularPath === this.$route.path) return i;
       }
@@ -82,8 +70,6 @@ export default {
       return -1;
     },
     prev() {
-      const sortedFiles = this.sortedFiles;
-
       if (this.$page.frontmatter.prev === false) {
         return null;
       } else if (this.$page.frontmatter.prev === true) {
@@ -117,87 +103,8 @@ export default {
         );
       }
     },
-    editLink() {
-      if (this.$page.frontmatter.editLink === false) {
-        return;
-      }
-      const {
-        repo,
-        editLinks,
-        docsDir = "",
-        docsBranch = "master",
-        docsRepo = repo,
-      } = this.$site.themeConfig;
-      if (docsRepo && editLinks && this.$page.relativePath) {
-        return this.createEditLink(
-          repo,
-          docsRepo,
-          docsDir,
-          docsBranch,
-          this.$page.relativePath
-        );
-      }
-    },
-    editLinkText() {
-      return (
-        this.$themeLocaleConfig.editLinkText ||
-        this.$site.themeConfig.editLinkText ||
-        `Edit this page`
-      );
-    },
-  },
-  methods: {
-    createEditLink(repo, docsRepo, docsDir, docsBranch, path) {
-      const bitbucket = /bitbucket.org/;
-      if (bitbucket.test(repo)) {
-        const base = outboundRE.test(docsRepo) ? docsRepo : repo;
-        return (
-          base.replace(endingSlashRE, "") +
-          `/src` +
-          `/${docsBranch}/` +
-          (docsDir ? docsDir.replace(endingSlashRE, "") + "/" : "") +
-          path +
-          `?mode=edit&spa=0&at=${docsBranch}&fileviewer=file-view-default`
-        );
-      }
-      const base = outboundRE.test(docsRepo)
-        ? docsRepo
-        : `https://github.com/${docsRepo}`;
-      return (
-        base.replace(endingSlashRE, "") +
-        `/edit` +
-        `/${docsBranch}/` +
-        (docsDir ? docsDir.replace(endingSlashRE, "") + "/" : "") +
-        path
-      );
-    },
   },
 };
-function resolvePrev(page, items) {
-  return find(page, items, -1);
-}
-function resolveNext(page, items) {
-  return find(page, items, 1);
-}
-function find(page, items, offset) {
-  const res = [];
-  flatten(items, res);
-  for (let i = 0; i < res.length; i++) {
-    const cur = res[i];
-    if (cur.type === "page" && cur.path === decodeURIComponent(page.path)) {
-      return res[i + offset];
-    }
-  }
-}
-function flatten(items, res) {
-  for (let i = 0, l = items.length; i < l; i++) {
-    if (items[i].type === "group") {
-      flatten(items[i].children || [], res);
-    } else {
-      res.push(items[i]);
-    }
-  }
-}
 </script>
 
 <style lang="stylus">

@@ -19,12 +19,11 @@ Inside Agile Product Development Series
 - [Continuous Integration & Deployment](./11-continuous-integration-deployment/)
 - [The Daily Logger](./12-daily-logger/)
 - [Deadlines](./13-deadlines/)
+- [Avoiding knowledge silos](./14-avoiding-knowledge-silos/)
+- _Fuckups: Some of our fuckups and how we handled them_
 - _Different abilities & ranks within a team_
   - Do you need a lead developer?
 - _Making decisions_
   - How do we find common ground?
   - Handling decisions with divided opinions
-- _Avoiding knowledge silos_
-- _Fuckups: Some of our fuckups and how we handled them_
-- _The dichotomy between using third party systems and developing internally_
 - _Keeping up2date with the constantly changing ecosystem_

@@ -5,6 +5,7 @@ editLink: false
 search: false
 prev: '/inside-agile-product-development-series/09-technical-debt-refactoring/'
 next: '/inside-agile-product-development-series/11-continuous-integration-deployment/'
+title: 'Pair programming & reviews'
 ---
 
 # Pair programming & reviews

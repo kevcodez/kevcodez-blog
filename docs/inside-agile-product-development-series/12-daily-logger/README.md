@@ -5,6 +5,7 @@ editLink: false
 search: false
 prev: '/inside-agile-product-development-series/11-continuous-integration-deployment/'
 next: '/inside-agile-product-development-series/13-deadlines/'
+title: 'The Daily Logger'
 ---
 
 # The Daily Logger

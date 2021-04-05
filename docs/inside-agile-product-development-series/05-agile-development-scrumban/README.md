@@ -5,6 +5,7 @@ editLink: false
 search: false
 prev: '/inside-agile-product-development-series/04-responsibilities-ownership/'
 next: '/inside-agile-product-development-series/06-recurring-meetings/'
+title: 'Agile Development: Scrumban'
 ---
 
 # Agile Development: Scrumban
