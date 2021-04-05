@@ -3,7 +3,7 @@ const _ = require("lodash");
 module.exports = {
   title: "kevcodez - Developer Blog",
   description:
-    "Developer Blog - Java, Kotlin, Spring, Postgres, DevOps, Web development",
+    "Developer Blog - Kotlin, Web development, Agile Software Development",
   evergreen: true,
   head: [
     [
@@ -60,7 +60,7 @@ module.exports = {
       {
         username: "kevcodez",
         language: "en-US",
-        hostname: "kevcodez.de",
+        hostname: "https://kevcodez.de",
         selector: ".content__default", // extract content to content:encoded
         count: 25,
         filter: (page) => page.frontmatter.date,
