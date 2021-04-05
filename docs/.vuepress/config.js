@@ -73,12 +73,6 @@ module.exports = {
       },
     ],
     [
-      "@vuepress/pwa",
-      {
-        serviceWorker: true,
-      },
-    ],
-    [
       "sitemap",
       {
         hostname: "https://kevcodez.de",
