@@ -4,14 +4,14 @@
     "docs:build": "vuepress build docs"
   },
   "devDependencies": {
-    "@mr-hope/vuepress-plugin-seo": "^1.11.2",
-    "@vuepress/plugin-medium-zoom": "^1.8.1",
-    "@vuepress/theme-default": "^1.8.1",
-    "sass": "^1.32.7",
+    "@mr-hope/vuepress-plugin-seo": "^1.30.0",
+    "@vuepress/plugin-medium-zoom": "^1.9.7",
+    "@vuepress/theme-default": "^1.9.7",
+    "sass": "^1.54.0",
     "sass-loader": "^10.1.1",
     "vue-tweet-embed": "^2.3.0",
-    "vuepress": "^1.8.1",
-    "vuepress-plugin-rss-feed": "^1.0.0",
+    "vuepress": "^1.9.7",
+    "vuepress-plugin-rss-feed": "^1.0.1",
     "vuepress-plugin-sitemap": "^2.1.2"
   },
   "dependencies": {

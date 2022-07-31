@@ -33,7 +33,7 @@ export default {
           if (diff < 0) return 1;
           return a.frontmatter.title.localeCompare(b.frontmatter.title);
         })
-        .slice(0, 40);
+        .slice(0, 25);
 
       return files;
     },
